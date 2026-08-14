@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Ukázka práce | Webys — Tvorba webů</title>
-<meta name="description" content="Živá ukázka webu, který Webys vytvořil — Březnovský Truhlář. Otevřete si ho a proklikejte, jako by byl váš.">
+<title>Ceník | Webys — Tvorba webů</title>
+<meta name="description" content="Přehledný ceník tvorby webu — od jednostránkového webu Start až po řešení na míru.">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2224%22 fill=%22%237c3aed%22/><text x=%2250%22 y=%2268%22 font-size=%2260%22 font-family=%22Arial%22 fill=%22white%22 text-anchor=%22middle%22>W</text></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -12,6 +12,8 @@
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+
+<canvas id="network-bg" aria-hidden="true"></canvas>
 
 <header class="site-header" id="top">
   <div class="container header-inner">
@@ -22,8 +24,8 @@
     <nav class="main-nav" id="main-nav">
       <a href="sluzby.html">Služby</a>
       <a href="proces.html">Proces</a>
-      <a href="ukazka.html">Ukázka práce</a>
-      <a href="index.html#cenik">Ceník</a>
+      <a href="index.html#ukazka">Ukázka práce</a>
+      <a href="cenik.html">Ceník</a>
       <a href="index.html#kontakt">Kontakt</a>
     </nav>
     <a href="index.html#kontakt" class="btn btn-primary btn-small header-cta">Poptat web</a>
@@ -39,56 +41,57 @@
   <section class="page-header">
     <div class="container">
       <a href="index.html" class="back-link">← Zpět na hlavní stránku</a>
-      <p class="eyebrow">Ukázka práce</p>
-      <h1>Reálný web, který si můžete rovnou otevřít</h1>
+      <p class="eyebrow">Ceník</p>
+      <h1>Přehledně a bez agenturního balastu</h1>
       <p class="hero-lead">
-        Místo statického screenshotu tu je živý náhled. Klidně si tím webem
-        proklikejte, jako by byl váš.
+        Tři jasné varianty. Žádné skryté položky, žádné dlouhé smlouvy.
       </p>
     </div>
   </section>
 
-  <!-- UKÁZKA -->
+  <!-- CENÍK -->
   <section class="section">
     <div class="container">
-      <div class="showcase">
-        <div class="showcase-frame">
-          <div class="browser-bar">
-            <span class="dot"></span><span class="dot"></span><span class="dot"></span>
-            <span class="browser-url">breznovskytruhlar.cz</span>
-          </div>
-          <iframe
-            src="https://breznovskytruhlar.cz/"
-            title="Náhled webu Březnovský Truhlář"
-            loading="lazy"
-            referrerpolicy="no-referrer">
-          </iframe>
-        </div>
-        <div class="showcase-info">
-          <h3>Březnovský Truhlář</h3>
-          <p>
-            Web pro řemeslnou firmu, kde bylo hlavním cílem působit důvěryhodně,
-            srozumitelně ukázat nabídku a nekomplikovat kontakt.
-          </p>
-          <ul class="tags">
-            <li>Řemeslné služby</li>
-            <li>Prezentační web</li>
-            <li>Responzivní</li>
+      <div class="grid grid-3 pricing">
+        <div class="card price-card">
+          <h3>Start</h3>
+          <p class="price">3 500 Kč <span>+ DPH</span></p>
+          <ul class="check-list">
+            <li>Jednostránkový web</li>
+            <li>Základní struktura obsahu</li>
+            <li>Mobilní verze</li>
+            <li>Nasazení online</li>
           </ul>
-          <a href="https://breznovskytruhlar.cz/" target="_blank" rel="noopener noreferrer" class="btn btn-ghost btn-small">
-            Otevřít celý web ↗
-          </a>
+          <a href="index.html#kontakt" class="btn btn-ghost btn-small">Poptat Start</a>
+        </div>
+        <div class="card price-card price-featured">
+          <span class="badge">Nejčastější volba</span>
+          <h3>Pro</h3>
+          <p class="price">6 900 Kč <span>+ DPH</span></p>
+          <ul class="check-list">
+            <li>Homepage + podstránky</li>
+            <li>Lepší struktura obsahu</li>
+            <li>Formulář a základní měření</li>
+            <li>Více prostoru pro důvěru</li>
+          </ul>
+          <a href="index.html#kontakt" class="btn btn-primary btn-small">Poptat Pro</a>
+        </div>
+        <div class="card price-card">
+          <h3>Individuál</h3>
+          <p class="price">Na dotaz</p>
+          <ul class="check-list">
+            <li>Více stránek</li>
+            <li>Specifický vzhled</li>
+            <li>Pokročilejší funkce</li>
+            <li>Řešení na míru</li>
+          </ul>
+          <a href="index.html#kontakt" class="btn btn-ghost btn-small">Poptat řešení</a>
         </div>
       </div>
-    </div>
-  </section>
-
-  <!-- CTA -->
-  <section class="section section-alt">
-    <div class="container center">
-      <h2>Chcete podobný výsledek?</h2>
-      <p class="section-lead center">Napište mi pár vět o tom, co potřebujete, a ozvu se s návrhem řešení.</p>
-      <a href="index.html#kontakt" class="btn btn-primary">Nezávazně poptat web</a>
+      <p class="not-included">
+        Do základních balíčků obvykle nepočítám e-shop s platební bránou, napojení
+        na databáze, rozsáhlé psaní textů na míru ani kompletní vizuální identitu.
+      </p>
     </div>
   </section>
 
@@ -103,8 +106,8 @@
     <nav class="footer-nav">
       <a href="sluzby.html">Služby</a>
       <a href="proces.html">Proces</a>
-      <a href="ukazka.html">Ukázka práce</a>
-      <a href="index.html#cenik">Ceník</a>
+      <a href="index.html#ukazka">Ukázka práce</a>
+      <a href="cenik.html">Ceník</a>
       <a href="index.html#kontakt">Kontakt</a>
     </nav>
     <p class="footer-meta">

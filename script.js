@@ -213,11 +213,11 @@ if (contactForm) {
 
 // Floating "network" background in the hero — dots drifting slowly and
 // connecting with thin lines when close, like a loose spider web.
+// Fixed to the viewport so it stays visible behind every page as you scroll.
 const canvas = document.getElementById("network-bg");
 
 if (canvas && canvas.getContext) {
   const ctx = canvas.getContext("2d");
-  const hero = canvas.closest(".hero");
   const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
   let dpr = Math.min(window.devicePixelRatio || 1, 2);
@@ -245,8 +245,8 @@ if (canvas && canvas.getContext) {
   }
 
   function resize() {
-    width = hero.clientWidth;
-    height = hero.clientHeight;
+    width = window.innerWidth;
+    height = window.innerHeight;
     canvas.width = width * dpr;
     canvas.height = height * dpr;
     canvas.style.width = `${width}px`;

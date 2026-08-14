@@ -13,6 +13,8 @@
 </head>
 <body>
 
+<canvas id="network-bg" aria-hidden="true"></canvas>
+
 <header class="site-header" id="top">
   <div class="container header-inner">
     <a href="#top" class="logo">
@@ -22,8 +24,8 @@
     <nav class="main-nav" id="main-nav">
       <a href="sluzby.html">Služby</a>
       <a href="proces.html">Proces</a>
-      <a href="ukazka.html">Ukázka práce</a>
-      <a href="#cenik">Ceník</a>
+      <a href="#ukazka">Ukázka práce</a>
+      <a href="cenik.html">Ceník</a>
       <a href="#kontakt">Kontakt</a>
     </nav>
     <a href="#kontakt" class="btn btn-primary btn-small header-cta">Poptat web</a>
@@ -37,73 +39,56 @@
 
   <!-- HERO -->
   <section class="hero">
-    <canvas id="network-bg" aria-hidden="true"></canvas>
     <div class="container hero-inner">
-      <p class="eyebrow">Weby, které dávají smysl</p>
       <h1>Web, který vypadá profesionálně<br> a funguje jednoduše.</h1>
-      <p class="hero-lead">
-        Jsem Adam Šanda a Webys je moje značka pro tvorbu webů. Dělám je sám,
-        bez agenturního balastu a funkcí, které by stejně nikdo nepoužil.
-      </p>
       <div class="hero-actions">
         <a href="#kontakt" class="btn btn-primary">Nezávazně poptat web</a>
-        <a href="ukazka.html" class="btn btn-ghost">Zobrazit ukázku práce</a>
+        <a href="#ukazka" class="btn btn-ghost">Zobrazit ukázku práce</a>
       </div>
-      <ul class="hero-stats">
-        <li><span class="stat-num">1:1</span> osobní přístup</li>
-        <li><span class="stat-num">2 dny</span> odpověď na poptávku</li>
-        <li><span class="stat-num">100%</span> mobilní použitelnost</li>
-      </ul>
     </div>
     <div class="hero-glow" aria-hidden="true"></div>
     <div class="hero-glow-teal" aria-hidden="true"></div>
   </section>
 
-  <!-- CENÍK -->
-  <section class="section section-alt" id="cenik">
+  <!-- UKÁZKA PRÁCE -->
+  <section class="section section-alt" id="ukazka">
     <div class="container">
-      <p class="section-tag center">Ceník</p>
-      <h2 class="center">Přehledně a bez agenturního balastu</h2>
-      <div class="grid grid-3 pricing">
-        <div class="card price-card">
-          <h3>Start</h3>
-          <p class="price">3 500 Kč <span>+ DPH</span></p>
-          <ul class="check-list">
-            <li>Jednostránkový web</li>
-            <li>Základní struktura obsahu</li>
-            <li>Mobilní verze</li>
-            <li>Nasazení online</li>
-          </ul>
-          <a href="#kontakt" class="btn btn-ghost btn-small">Poptat Start</a>
+      <p class="section-tag center">Ukázka práce</p>
+      <h2 class="center">Reálný web, který si můžete rovnou otevřít</h2>
+      <p class="section-lead center">
+        Místo statického screenshotu tu je živý náhled. Klidně si tím webem
+        proklikéjte, jako by byl váš.
+      </p>
+
+      <div class="showcase">
+        <div class="showcase-frame">
+          <div class="browser-bar">
+            <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+            <span class="browser-url">breznovskytruhlar.cz</span>
+          </div>
+          <iframe
+            src="https://breznovskytruhlar.cz/"
+            title="Náhled webu Březnovský Truhlář"
+            loading="lazy"
+            referrerpolicy="no-referrer">
+          </iframe>
         </div>
-        <div class="card price-card price-featured">
-          <span class="badge">Nejčastější volba</span>
-          <h3>Pro</h3>
-          <p class="price">6 900 Kč <span>+ DPH</span></p>
-          <ul class="check-list">
-            <li>Homepage + podstránky</li>
-            <li>Lepší struktura obsahu</li>
-            <li>Formulář a základní měření</li>
-            <li>Více prostoru pro důvěru</li>
+        <div class="showcase-info">
+          <h3>Březnovský Truhlář</h3>
+          <p>
+            Web pro řemeslné firmu, kde bylo hlavním cílem působit důvěryhodně,
+            srozumitelně ukázat nabídku a nekomplikovat kontakt.
+          </p>
+          <ul class="tags">
+            <li>Řemeslné služby</li>
+            <li>Prezentační web</li>
+            <li>Responzivní</li>
           </ul>
-          <a href="#kontakt" class="btn btn-primary btn-small">Poptat Pro</a>
-        </div>
-        <div class="card price-card">
-          <h3>Individuál</h3>
-          <p class="price">Na dotaz</p>
-          <ul class="check-list">
-            <li>Více stránek</li>
-            <li>Specifický vzhled</li>
-            <li>Pokročilejší funkce</li>
-            <li>Řešení na míru</li>
-          </ul>
-          <a href="#kontakt" class="btn btn-ghost btn-small">Poptat řešení</a>
+          <a href="https://breznovskytruhlar.cz/" target="_blank" rel="noopener noreferrer" class="btn btn-ghost btn-small">
+            Otevřít celý web ↗
+          </a>
         </div>
       </div>
-      <p class="not-included">
-        Do základních balíčků obvykle nepočítám e-shop s platební bránou, napojení
-        na databáze, rozsáhlé psaní textů na míru ani kompletní vizuální identitu.
-      </p>
     </div>
   </section>
 
@@ -173,8 +158,8 @@
     <nav class="footer-nav">
       <a href="sluzby.html">Služby</a>
       <a href="proces.html">Proces</a>
-      <a href="ukazka.html">Ukázka práce</a>
-      <a href="#cenik">Ceník</a>
+      <a href="#ukazka">Ukázka práce</a>
+      <a href="cenik.html">Ceník</a>
       <a href="#kontakt">Kontakt</a>
     </nav>
     <p class="footer-meta">
