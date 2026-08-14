@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Webys — Tvorba webů | Adam Šanda</title>
+<meta name="description" content="Webys — čisté a rychlé weby pro živnostníky a malé firmy. Tvořím sám, od návrhu po nasazení.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2224%22 fill=%22%237c3aed%22/><text x=%2250%22 y=%2268%22 font-size=%2260%22 font-family=%22Arial%22 fill=%22white%22 text-anchor=%22middle%22>W</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="site-header" id="top">
+  <div class="container header-inner">
+    <a href="#top" class="logo">
+      <span class="logo-mark" aria-hidden="true">W</span>
+      Web<span class="accent">ys</span>
+    </a>
+    <nav class="main-nav" id="main-nav">
+      <a href="#sluzby">Služby</a>
+      <a href="#ukazka">Ukázka práce</a>
+      <a href="#cenik">Ceník</a>
+      <a href="#kontakt">Kontakt</a>
+    </nav>
+    <a href="#kontakt" class="btn btn-primary btn-small header-cta">Poptat web</a>
+    <button class="nav-toggle" id="nav-toggle" aria-label="Otevřít menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<main>
+
+  <!-- HERO -->
+  <section class="hero">
+    <canvas id="network-bg" aria-hidden="true"></canvas>
+    <div class="container hero-inner">
+      <p class="eyebrow">Weby, které dávají smysl</p>
+      <h1>Web, který vypadá profesionálně<br> a funguje jednoduše.</h1>
+      <p class="hero-lead">
+        Jsem Adam Šanda a Webys je moje značka pro tvorbu webů. Dělám je sám,
+        bez agenturního balastu a funkcí, které by stejně nikdo nepoužil.
+      </p>
+      <div class="hero-actions">
+        <a href="#kontakt" class="btn btn-primary">Nezávazně poptat web</a>
+        <a href="#ukazka" class="btn btn-ghost">Zobrazit ukázku práce</a>
+      </div>
+      <ul class="hero-stats">
+        <li><span class="stat-num">1:1</span> osobní přístup</li>
+        <li><span class="stat-num">2 dny</span> odpověď na poptávku</li>
+        <li><span class="stat-num">100%</span> mobilní použitelnost</li>
+      </ul>
+    </div>
+    <div class="hero-glow" aria-hidden="true"></div>
+    <div class="hero-glow-teal" aria-hidden="true"></div>
+  </section>
+
+  <!-- SLUŽBY -->
+  <section class="section section-alt" id="sluzby">
+    <div class="container">
+      <p class="section-tag center">Služby</p>
+      <h2 class="center">Co přesně pro vás udělám</h2>
+      <p class="section-lead center">
+        Nejde o to mít web za každou cenu. Jde o to, aby lidem bylo hned jasné,
+        co děláte a proč se vám ozvat.
+      </p>
+      <div class="grid grid-3">
+        <div class="card feature-card">
+          <span class="card-index">01</span>
+          <h3>Jasná nabídka</h3>
+          <p>Než začneme stavět, ujasníme si, co má web vlastně říct. Bez toho se mine účinkem i ten hezčí design.</p>
+        </div>
+        <div class="card feature-card">
+          <span class="card-index">02</span>
+          <h3>Rychlý web</h3>
+          <p>Žádný zbytečně těžký systém na pozadí. Stránka se načte dřív, než to člověk stihne domyslet.</p>
+        </div>
+        <div class="card feature-card">
+          <span class="card-index">03</span>
+          <h3>Mobilní použitelnost</h3>
+          <p>Většina návštěvníků otevře web na telefonu. Musí tam vypadat a fungovat stejně dobře jako na počítači.</p>
+        </div>
+        <div class="card feature-card">
+          <span class="card-index">04</span>
+          <h3>Struktura webu</h3>
+          <p>Ne všechno patří na úvodní stránku. Pomůžu rozhodnout, co tam má být a co si zaslouží vlastní prostor.</p>
+        </div>
+        <div class="card feature-card">
+          <span class="card-index">05</span>
+          <h3>Nasazení online</h3>
+          <p>Doména, hosting, ostrý provoz. O tohle se postarám, ať web co nejdřív začne fungovat pro zákazníky.</p>
+        </div>
+        <div class="card feature-card">
+          <span class="card-index">06</span>
+          <h3>Drobné úpravy</h3>
+          <p>Web nekončí spuštěním. Když bude potřeba něco doplnit nebo přepsat, stačí napsat.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRO KOHO -->
+  <section class="section" id="pro-koho">
+    <div class="container">
+      <p class="section-tag center">Pro koho</p>
+      <h2 class="center">Komu tenhle typ webu sedí nejvíc</h2>
+      <div class="grid grid-3">
+        <div class="card feature-card card-simple">
+          <span class="card-index">01</span>
+          <h3>Řemeslníci</h3>
+          <p>Elektrikáři, instalatéři, truhláři, podlaháři, zámečníci a podobné profese.</p>
+        </div>
+        <div class="card feature-card card-simple">
+          <span class="card-index">02</span>
+          <h3>Služby</h3>
+          <p>Účetní, poradci, freelanceři, marketéři nebo lidi podnikající lokálně.</p>
+        </div>
+        <div class="card feature-card card-simple">
+          <span class="card-index">03</span>
+          <h3>Menší firmy</h3>
+          <p>Kavárny, salony, studia, provozovny, půjčovny a další menší podniky.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROCES -->
+  <section class="section section-alt" id="proces">
+    <div class="container">
+      <p class="section-tag center">Proces</p>
+      <h2 class="center">Jak probíhá spolupráce</h2>
+      <div class="steps">
+        <div class="step">
+          <span class="step-num">1</span>
+          <h3>Krátká domluva</h3>
+          <p>Napíšete mi, co potřebujete, a společně ujasníme rozsah, styl a cíl webu.</p>
+        </div>
+        <div class="step">
+          <span class="step-num">2</span>
+          <h3>Podklady</h3>
+          <p>Pošlete texty, kontakty, fotky, nebo jen pár základních informací, ze kterých vyjdeme.</p>
+        </div>
+        <div class="step">
+          <span class="step-num">3</span>
+          <h3>Návrh a zpracování</h3>
+          <p>Připravím podobu webu a doladíme detaily podle vašich připomínek.</p>
+        </div>
+        <div class="step">
+          <span class="step-num">4</span>
+          <h3>Spuštění</h3>
+          <p>Web nasadíme online, otestujeme, že vše funguje, a může sloužit zákazníkům.</p>
+        </div>
+      </div>
+      <p class="not-included">
+        Žádný z kroků není pevně daný. Pokud něco už máte hotové, klidně ho přeskočíme.
+      </p>
+    </div>
+  </section>
+
+  <!-- UKÁZKA PRÁCE -->
+  <section class="section" id="ukazka">
+    <div class="container">
+      <p class="section-tag center">Ukázka práce</p>
+      <h2 class="center">Reálný web, který si můžete rovnou otevřít</h2>
+      <p class="section-lead center">
+        Místo statického screenshotu tu je živý náhled. Klidně si tím webem
+        proklikejte, jako by byl váš.
+      </p>
+
+      <div class="showcase">
+        <div class="showcase-frame">
+          <div class="browser-bar">
+            <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+            <span class="browser-url">breznovskytruhlar.cz</span>
+          </div>
+          <iframe
+            src="https://breznovskytruhlar.cz/"
+            title="Náhled webu Březnovský Truhlář"
+            loading="lazy"
+            referrerpolicy="no-referrer">
+          </iframe>
+        </div>
+        <div class="showcase-info">
+          <h3>Březnovský Truhlář</h3>
+          <p>
+            Web pro řemeslnou firmu, kde bylo hlavním cílem působit důvěryhodně,
+            srozumitelně ukázat nabídku a nekomplikovat kontakt.
+          </p>
+          <ul class="tags">
+            <li>Řemeslné služby</li>
+            <li>Prezentační web</li>
+            <li>Responzivní</li>
+          </ul>
+          <a href="https://breznovskytruhlar.cz/" target="_blank" rel="noopener noreferrer" class="btn btn-ghost btn-small">
+            Otevřít celý web ↗
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CENÍK -->
+  <section class="section section-alt" id="cenik">
+    <div class="container">
+      <p class="section-tag center">Ceník</p>
+      <h2 class="center">Přehledně a bez agenturního balastu</h2>
+      <div class="grid grid-3 pricing">
+        <div class="card price-card">
+          <h3>Start</h3>
+          <p class="price">3 500 Kč <span>+ DPH</span></p>
+          <ul class="check-list">
+            <li>Jednostránkový web</li>
+            <li>Základní struktura obsahu</li>
+            <li>Mobilní verze</li>
+            <li>Nasazení online</li>
+          </ul>
+          <a href="#kontakt" class="btn btn-ghost btn-small">Poptat Start</a>
+        </div>
+        <div class="card price-card price-featured">
+          <span class="badge">Nejčastější volba</span>
+          <h3>Pro</h3>
+          <p class="price">6 900 Kč <span>+ DPH</span></p>
+          <ul class="check-list">
+            <li>Homepage + podstránky</li>
+            <li>Lepší struktura obsahu</li>
+            <li>Formulář a základní měření</li>
+            <li>Více prostoru pro důvěru</li>
+          </ul>
+          <a href="#kontakt" class="btn btn-primary btn-small">Poptat Pro</a>
+        </div>
+        <div class="card price-card">
+          <h3>Individuál</h3>
+          <p class="price">Na dotaz</p>
+          <ul class="check-list">
+            <li>Více stránek</li>
+            <li>Specifický vzhled</li>
+            <li>Pokročilejší funkce</li>
+            <li>Řešení na míru</li>
+          </ul>
+          <a href="#kontakt" class="btn btn-ghost btn-small">Poptat řešení</a>
+        </div>
+      </div>
+      <p class="not-included">
+        Do základních balíčků obvykle nepočítám e-shop s platební bránou, napojení
+        na databáze, rozsáhlé psaní textů na míru ani kompletní vizuální identitu.
+      </p>
+    </div>
+  </section>
+
+  <!-- KONTAKT -->
+  <section class="section" id="kontakt">
+    <div class="container contact-inner">
+      <div class="contact-text">
+        <p class="section-tag">Kontakt</p>
+        <h2>Pojďme se podívat, co by pro vás dávalo smysl</h2>
+        <p>
+          Nemusíte mít přesné zadání. Stačí pár vět o tom, co děláte a jaký web
+          byste chtěli, a ozvu se s návrhem řešení.
+        </p>
+        <ul class="contact-facts">
+          <li>✔ Nezávazná poptávka</li>
+          <li>✔ Rychlá domluva</li>
+          <li>✔ Odpověď do 2 pracovních dnů</li>
+        </ul>
+        <div class="contact-links">
+          <a href="https://wa.me/420605997843?text=Ahoj%2C%20m%C3%A1m%20z%C3%A1jem%20o%20web" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-small">
+            💬 Napsat na WhatsApp
+          </a>
+          <a href="mailto:webyswebys@gmail.com" class="btn btn-ghost btn-small">
+            ✉️ webyswebys@gmail.com
+          </a>
+        </div>
+      </div>
+
+      <form class="contact-form" id="contact-form" action="https://formspree.io/f/mjybozep" method="POST">
+        <input type="hidden" name="_subject" value="Nová poptávka webu z webys.cz">
+        <div class="field">
+          <div class="field-head">
+            <span class="field-index">01</span>
+            <label for="f-jmeno">Jméno</label>
+          </div>
+          <input type="text" id="f-jmeno" name="jmeno" required autocomplete="name">
+        </div>
+        <div class="field">
+          <div class="field-head">
+            <span class="field-index">02</span>
+            <label for="f-email">E-mail</label>
+          </div>
+          <input type="email" id="f-email" name="email" required autocomplete="email">
+        </div>
+        <div class="field field-accent-teal">
+          <div class="field-head">
+            <span class="field-index">03</span>
+            <label for="f-zprava">Vaše zpráva</label>
+          </div>
+          <textarea id="f-zprava" name="zprava" rows="5" required placeholder="Co děláte a jaký web potřebujete?"></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Odeslat poptávku</button>
+        <p class="form-note" id="form-status">Zpráva přijde přímo na webyswebys@gmail.com.</p>
+      </form>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <a href="#top" class="logo">
+      <span class="logo-mark" aria-hidden="true">W</span>
+      Web<span class="accent">ys</span>
+    </a>
+    <nav class="footer-nav">
+      <a href="#sluzby">Služby</a>
+      <a href="#ukazka">Ukázka práce</a>
+      <a href="#cenik">Ceník</a>
+      <a href="#kontakt">Kontakt</a>
+    </nav>
+    <p class="footer-meta">
+      © 2026 Webys — Adam Šanda · IČO: 24552241
+      · <button type="button" class="footer-link-btn" id="open-cookie-settings">Nastavení cookies</button>
+    </p>
+  </div>
+</footer>
+
+<!-- COOKIE LIŠTA -->
+<div class="cookie-banner" id="cookie-banner" role="dialog" aria-live="polite" aria-label="Nastavení cookies" hidden>
+  <div class="cookie-banner-inner">
+    <div class="cookie-banner-text">
+      <h2>Používáme cookies</h2>
+      <p>
+        Nezbytné cookies používáme vždy, aby web fungoval správně. Se souhlasem
+        bychom rádi používali i analytické a marketingové cookies, díky kterým
+        pochopíme, jak web funguje, a případně vylepšíme jeho obsah a nabídku.
+        Souhlas je dobrovolný a můžete ho kdykoliv odvolat nebo změnit v
+        nastavení cookies v patě webu. Více v
+        <button type="button" class="link-btn" id="open-cookie-details">zásadách používání cookies</button>.
+      </p>
+    </div>
+    <div class="cookie-banner-actions">
+      <button type="button" class="btn btn-ghost btn-small" id="cookie-reject">Odmítnout nepovinné</button>
+      <button type="button" class="btn btn-ghost btn-small" id="cookie-settings">Nastavení</button>
+      <button type="button" class="btn btn-primary btn-small" id="cookie-accept">Přijmout vše</button>
+    </div>
+  </div>
+</div>
+
+<!-- MODÁL S PODROBNÝM NASTAVENÍM -->
+<div class="cookie-modal-overlay" id="cookie-modal-overlay" hidden>
+  <div class="cookie-modal" role="dialog" aria-modal="true" aria-labelledby="cookie-modal-title">
+    <button type="button" class="cookie-modal-close" id="cookie-modal-close" aria-label="Zavřít nastavení cookies">✕</button>
+    <h2 id="cookie-modal-title">Nastavení cookies</h2>
+    <p>
+      Vyberte si, které kategorie cookies nám povolíte. Nezbytné cookies nejde
+      vypnout, protože bez nich by web nefungoval správně.
+    </p>
+
+    <div class="cookie-category">
+      <div class="cookie-category-head">
+        <label class="switch">
+          <input type="checkbox" checked disabled>
+          <span class="switch-slider"></span>
+        </label>
+        <div>
+          <h3>Nezbytné cookies</h3>
+          <p>Umožňují základní fungování webu (např. zapamatování vaší volby ohledně cookies). Vždy aktivní.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="cookie-category">
+      <div class="cookie-category-head">
+        <label class="switch">
+          <input type="checkbox" id="consent-analytics">
+          <span class="switch-slider"></span>
+        </label>
+        <div>
+          <h3>Analytické cookies</h3>
+          <p>Pomáhají nám anonymně pochopit návštěvnost a chování na webu, abychom ho mohli zlepšovat.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="cookie-category">
+      <div class="cookie-category-head">
+        <label class="switch">
+          <input type="checkbox" id="consent-marketing">
+          <span class="switch-slider"></span>
+        </label>
+        <div>
+          <h3>Marketingové cookies</h3>
+          <p>Slouží k zobrazování relevantnější nabídky a měření účinnosti případné reklamy.</p>
+        </div>
+      </div>
+    </div>
+
+    <details class="cookie-details" id="cookie-details-panel">
+      <summary>Zásady používání cookies</summary>
+      <p>
+        Cookies jsou malé textové soubory, které si při návštěvě webu ukládá
+        váš prohlížeč. Slouží k tomu, aby si web zapamatoval vaše nastavení
+        nebo abychom mohli anonymně vyhodnocovat návštěvnost.
+      </p>
+      <p>
+        <strong>Nezbytné:</strong> uchovávají pouze vaši volbu ohledně cookies
+        (lokálně ve vašem prohlížeči) a nejsou předávány třetím stranám.
+      </p>
+      <p>
+        <strong>Analytické / marketingové:</strong> aktivují se pouze s vaším
+        souhlasem a mohou zahrnovat nástroje třetích stran (např. Google
+        Analytics). Souhlas můžete kdykoliv odvolat tlačítkem „Nastavení
+        cookies“ v patě webu.
+      </p>
+      <p>
+        Provozovatelem webu a správcem údajů je Adam Šanda, IČO: 24552241,
+        kontakt: <a href="mailto:webyswebys@gmail.com">webyswebys@gmail.com</a>.
+      </p>
+    </details>
+
+    <div class="cookie-modal-actions">
+      <button type="button" class="btn btn-ghost btn-small" id="cookie-reject-modal">Odmítnout nepovinné</button>
+      <button type="button" class="btn btn-primary btn-small" id="cookie-save">Uložit nastavení</button>
+    </div>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
