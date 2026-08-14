@@ -119,14 +119,66 @@ document.getElementById("open-cookie-details")?.addEventListener("click", () => 
 });
 
 // Contact form -> submits to Formspree so it lands directly in the inbox,
-// no mailto redirect and no page reload.
+// no mailto redirect and no page reload. Two basic anti-spam layers:
+// a honeypot field bots tend to fill in, and a cooldown that locks the form
+// right after sending so it can't be resubmitted immediately.
 const contactForm = document.getElementById("contact-form");
 const formStatus = document.getElementById("form-status");
 const FORM_STATUS_DEFAULT = formStatus ? formStatus.textContent : "";
+const CONTACT_COOLDOWN_MS = 60 * 1000;
+const CONTACT_COOLDOWN_KEY = "webys_last_submit";
+
+function lockContactForm(remainingMs) {
+  if (!contactForm) return;
+  const controls = contactForm.querySelectorAll("input, textarea, button");
+  controls.forEach((el) => { el.disabled = true; });
+
+  let remaining = Math.max(1, Math.ceil(remainingMs / 1000));
+  const tick = () => {
+    if (formStatus) {
+      formStatus.textContent = `Díky! Poptávka je odeslaná, ozvu se co nejdřív. Formulář se odemkne za ${remaining} s.`;
+      formStatus.classList.add("form-note-ok");
+    }
+    remaining -= 1;
+    if (remaining < 0) {
+      clearInterval(timer);
+      controls.forEach((el) => { el.disabled = false; });
+      if (formStatus) {
+        formStatus.textContent = FORM_STATUS_DEFAULT;
+        formStatus.classList.remove("form-note-ok");
+      }
+    }
+  };
+  tick();
+  const timer = setInterval(tick, 1000);
+}
 
 if (contactForm) {
+  // If the page was reloaded shortly after a previous submission, keep it locked.
+  const lastSubmitOnLoad = Number(localStorage.getItem(CONTACT_COOLDOWN_KEY) || 0);
+  const elapsedOnLoad = Date.now() - lastSubmitOnLoad;
+  if (elapsedOnLoad < CONTACT_COOLDOWN_MS) {
+    lockContactForm(CONTACT_COOLDOWN_MS - elapsedOnLoad);
+  }
+
   contactForm.addEventListener("submit", async (event) => {
     event.preventDefault();
+
+    const honeypot = contactForm.querySelector('[name="_gotcha"]');
+    if (honeypot && honeypot.value) {
+      // Looks like a bot — pretend it worked without actually sending anything.
+      contactForm.reset();
+      localStorage.setItem(CONTACT_COOLDOWN_KEY, String(Date.now()));
+      lockContactForm(CONTACT_COOLDOWN_MS);
+      return;
+    }
+
+    const lastSubmit = Number(localStorage.getItem(CONTACT_COOLDOWN_KEY) || 0);
+    const elapsed = Date.now() - lastSubmit;
+    if (elapsed < CONTACT_COOLDOWN_MS) {
+      lockContactForm(CONTACT_COOLDOWN_MS - elapsed);
+      return;
+    }
 
     const submitBtn = contactForm.querySelector("button[type=submit]");
     submitBtn.disabled = true;
@@ -144,20 +196,17 @@ if (contactForm) {
 
       if (response.ok) {
         contactForm.reset();
-        if (formStatus) {
-          formStatus.textContent = "Díky! Poptávka je odeslaná, ozvu se co nejdřív.";
-          formStatus.classList.add("form-note-ok");
-        }
+        localStorage.setItem(CONTACT_COOLDOWN_KEY, String(Date.now()));
+        lockContactForm(CONTACT_COOLDOWN_MS);
       } else {
         throw new Error("Formspree response not ok");
       }
     } catch {
+      submitBtn.disabled = false;
       if (formStatus) {
         formStatus.textContent = "Odeslání se nepovedlo. Napište mi prosím přímo na webyswebys@gmail.com.";
         formStatus.classList.add("form-note-error");
       }
-    } finally {
-      submitBtn.disabled = false;
     }
   });
 }

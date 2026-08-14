@@ -333,133 +333,153 @@ h2 {
 .card h3 { margin: 0 0 10px; font-size: 1.1rem; }
 .card p { margin: 0; color: var(--ink-soft); font-size: 0.96rem; }
 
-.card-simple { background: linear-gradient(160deg, var(--purple-tint), #fff); }
-
 .section-alt .card { background: #fff; }
-.section-alt .card-simple { background: linear-gradient(160deg, #fff, var(--purple-tint)); }
 
-/* Feature cards (services / audience) — index numeral instead of an icon tile,
-   a side accent bar that unrolls on hover instead of a generic lift+shadow */
+/* Page header used on the sub-pages (services, process, showcase) */
 
-.feature-card {
-  overflow: hidden;
+.page-header {
+  position: relative;
+  z-index: 1;
+  padding: 150px 0 70px;
+  background: linear-gradient(180deg, #fbf9ff 0%, var(--bg) 100%);
 }
 
-.feature-card::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 0;
-  bottom: 0;
-  width: 3px;
-  background: var(--purple);
-  transform: scaleY(0);
-  transform-origin: bottom;
-  transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.feature-card:nth-child(even)::before { background: var(--teal); }
-
-.feature-card:hover {
-  transform: none;
-  box-shadow: none;
-  border-color: var(--border);
-}
-
-.feature-card:hover::before {
-  transform: scaleY(1);
-  transform-origin: top;
-}
-
-.feature-card:hover h3 {
-  color: var(--purple);
-}
-
-.feature-card:nth-child(even):hover h3 {
-  color: #0f766e;
-}
-
-.card-index {
-  display: block;
-  font-family: "Courier New", monospace;
-  font-size: 0.8rem;
-  letter-spacing: 0.1em;
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
   color: var(--muted);
+  font-size: 0.9rem;
+  font-weight: 600;
   margin-bottom: 20px;
-  transition: color 0.25s ease, transform 0.25s ease;
+  transition: color 0.15s ease;
 }
 
-.feature-card:hover .card-index {
-  color: var(--purple);
-  transform: translateX(3px);
+.back-link:hover { color: var(--purple); }
+
+.page-header h1 {
+  font-size: clamp(2rem, 4.5vw, 3rem);
+  letter-spacing: -0.02em;
+  margin: 0 0 18px;
 }
 
-.feature-card:nth-child(even):hover .card-index {
-  color: var(--teal);
+.page-header .hero-lead { margin: 0; }
+
+/* -------------------- Service list -------------------- */
+/* Full-width editorial rows instead of a grid of icon cards */
+
+.service-list {
+  border-top: 1px solid var(--border);
 }
 
-.feature-card h3 { transition: color 0.2s ease; }
-
-
-/* -------------------- Process steps -------------------- */
-
-.steps {
+.service-row {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 24px;
+  grid-template-columns: 84px 1fr;
+  gap: 32px;
+  align-items: baseline;
+  padding: 30px 0;
+  border-bottom: 1px solid var(--border);
+  transition: padding-left 0.25s ease;
+}
+
+.service-row:hover { padding-left: 12px; }
+
+.service-num {
+  font-family: "Courier New", monospace;
+  font-weight: 300;
+  font-size: 2rem;
+  line-height: 1;
+  color: var(--border);
+  transition: color 0.25s ease;
+}
+
+.service-row:nth-child(even) .service-num { color: var(--border); }
+.service-row:hover .service-num { color: var(--purple); }
+.service-row:nth-child(even):hover .service-num { color: var(--teal); }
+
+.service-body h3 {
+  margin: 0 0 8px;
+  font-size: 1.2rem;
+  transition: color 0.2s ease;
+}
+
+.service-row:hover .service-body h3 { color: var(--purple); }
+.service-row:nth-child(even):hover .service-body h3 { color: #0f766e; }
+
+.service-body p {
+  margin: 0;
+  color: var(--ink-soft);
+  max-width: 640px;
+}
+
+/* -------------------- Audience bar -------------------- */
+/* Plain columns split by hairlines instead of separate boxed cards */
+
+.audience-bar {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.audience-item {
+  padding: 0 32px;
+  border-left: 1px solid var(--border);
+}
+
+.audience-item:first-child {
+  padding-left: 0;
+  border-left: none;
+}
+
+.audience-item h3 { margin: 0 0 10px; font-size: 1.1rem; }
+.audience-item p { margin: 0; color: var(--ink-soft); font-size: 0.95rem; }
+
+/* -------------------- Process timeline -------------------- */
+
+.timeline {
+  position: relative;
+  padding-left: 48px;
   margin-bottom: 40px;
 }
 
-.step {
-  background: #fff;
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  padding: 28px;
-  position: relative;
-  overflow: hidden;
-  transition: border-color 0.2s ease;
-}
-
-.step::before {
+.timeline::before {
   content: "";
   position: absolute;
-  left: 0;
+  left: 17px;
+  top: 4px;
+  bottom: 4px;
+  width: 2px;
+  background: var(--border);
+}
+
+.timeline-item {
+  position: relative;
+  padding-bottom: 44px;
+}
+
+.timeline-item:last-child { padding-bottom: 0; }
+
+.timeline-marker {
+  position: absolute;
+  left: -48px;
   top: 0;
-  bottom: 0;
-  width: 3px;
-  background: var(--purple);
-  transform: scaleY(0);
-  transform-origin: bottom;
-  transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.step:nth-child(even)::before { background: var(--teal); }
-
-.step:hover::before {
-  transform: scaleY(1);
-  transform-origin: top;
-}
-
-.step-num {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
   width: 36px;
   height: 36px;
   border-radius: 50%;
   background: var(--purple-tint);
   color: var(--purple-dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
   font-weight: 800;
-  margin-bottom: 16px;
 }
 
-.step:nth-child(even) .step-num {
+.timeline-item:nth-child(even) .timeline-marker {
   background: rgba(20, 184, 166, 0.15);
   color: #0f766e;
 }
 
-.step h3 { margin: 0 0 8px; font-size: 1.05rem; }
-.step p { margin: 0; color: var(--ink-soft); font-size: 0.94rem; }
+.timeline-body h3 { margin: 0 0 8px; font-size: 1.1rem; }
+.timeline-body p { margin: 0; color: var(--ink-soft); font-size: 0.94rem; }
 
 .not-included {
   text-align: center;
@@ -732,6 +752,22 @@ h2 {
 .form-note.form-note-ok { color: var(--teal); font-weight: 600; }
 .form-note.form-note-error { color: #d1345b; font-weight: 600; }
 
+/* Honeypot — invisible to people, catches basic bots that fill every field */
+.hp-field {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+.contact-form button[disabled] {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+
 
 /* -------------------- Footer -------------------- */
 
@@ -799,17 +835,24 @@ h2 {
   }
 
   .grid-3 { grid-template-columns: 1fr; }
-  .steps { grid-template-columns: repeat(2, 1fr); }
   .showcase { grid-template-columns: 1fr; }
   .contact-inner { grid-template-columns: 1fr; }
+  .audience-bar { grid-template-columns: 1fr; gap: 24px; }
+  .audience-item {
+    padding: 0 0 0 20px;
+    border-left: 1px solid var(--border);
+  }
+  .audience-item:first-child { padding-left: 20px; border-left: 1px solid var(--border); }
 }
 
 @media (max-width: 560px) {
   .section { padding: 70px 0; }
   .hero { padding: 110px 0 70px; }
-  .steps { grid-template-columns: 1fr; }
+  .page-header { padding: 120px 0 50px; }
   .hero-actions .btn { width: 100%; }
   .footer-inner { justify-content: center; text-align: center; }
+  .service-row { grid-template-columns: 1fr; gap: 8px; }
+  .service-num { font-size: 1.4rem; }
 }
 
 /* -------------------- Cookie consent -------------------- */
