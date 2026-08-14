@@ -225,12 +225,12 @@ if (canvas && canvas.getContext) {
   let height = 0;
   let nodes = [];
 
-  const LINK_DISTANCE = 140;
+  const LINK_DISTANCE = 150;
   const NODE_COLOR = "124, 58, 237"; // purple
   const LINE_COLOR = "124, 58, 237";
 
   function nodeCountFor(area) {
-    return Math.min(70, Math.max(24, Math.round(area / 18000)));
+    return Math.min(90, Math.max(32, Math.round(area / 14000)));
   }
 
   function createNodes() {
@@ -270,7 +270,7 @@ if (canvas && canvas.getContext) {
 
       ctx.beginPath();
       ctx.arc(n.x, n.y, n.r, 0, Math.PI * 2);
-      ctx.fillStyle = `rgba(${NODE_COLOR}, 0.55)`;
+      ctx.fillStyle = `rgba(${NODE_COLOR}, 0.7)`;
       ctx.fill();
     });
 
@@ -284,7 +284,7 @@ if (canvas && canvas.getContext) {
         const dist = Math.sqrt(dx * dx + dy * dy);
 
         if (dist < LINK_DISTANCE) {
-          const opacity = (1 - dist / LINK_DISTANCE) * 0.35;
+          const opacity = (1 - dist / LINK_DISTANCE) * 0.5;
           ctx.beginPath();
           ctx.moveTo(a.x, a.y);
           ctx.lineTo(b.x, b.y);
