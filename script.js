@@ -1,3 +1,17 @@
+// Click-to-load: replace showcase placeholder with live iframe on user interaction
+const showcaseWrap = document.getElementById("showcase-iframe-wrap");
+const showcaseBtn = document.getElementById("showcase-load-btn");
+if (showcaseBtn && showcaseWrap) {
+  showcaseBtn.addEventListener("click", () => {
+    const iframe = document.createElement("iframe");
+    iframe.src = "https://breznovskytruhlar.cz/";
+    iframe.title = "Náhled webu Březnovský Truhlář";
+    iframe.referrerPolicy = "no-referrer";
+    iframe.style.cssText = "width:100%;height:480px;border:none;display:block;";
+    showcaseWrap.replaceWith(iframe);
+  }, { once: true });
+}
+
 // Mobile nav toggle
 const header = document.querySelector(".site-header");
 const navToggle = document.getElementById("nav-toggle");

@@ -3,13 +3,39 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Proces spolupráce | Webys — Tvorba webů</title>
+<title>Jak probíhá tvorba webových stránek | Webys</title>
 <meta name="description" content="Jak probíhá spolupráce na tvorbě webu se Webys — od krátké domluvy přes podklady a návrh až po spuštění.">
+<link rel="canonical" href="https://webyss.cz/proces.html">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2224%22 fill=%22%237c3aed%22/><text x=%2250%22 y=%2268%22 font-size=%2260%22 font-family=%22Arial%22 fill=%22white%22 text-anchor=%22middle%22>W</text></svg>">
+<!-- TODO: og:image — doplňte absolutní URL náhledového obrázku webu (doporučeno 1200×630 px) -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Webys">
+<meta property="og:title" content="Jak probíhá tvorba webových stránek | Webys">
+<meta property="og:description" content="Jak probíhá spolupráce na tvorbě webu se Webys — od krátké domluvy přes podklady a návrh až po spuštění.">
+<meta property="og:url" content="https://webyss.cz/proces.html">
+<meta property="og:locale" content="cs_CZ">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Jak probíhá tvorba webových stránek | Webys">
+<meta name="twitter:description" content="Jak probíhá spolupráce na tvorbě webu se Webys — od krátké domluvy přes podklady a návrh až po spuštění.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="preload" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"></noscript>
 <link rel="stylesheet" href="styles.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Webys", "item": "https://webyss.cz/"},
+        {"@type": "ListItem", "position": 2, "name": "Proces", "item": "https://webyss.cz/proces.html"}
+      ]
+    }
+  ]
+}
+</script>
 </head>
 <body>
 
@@ -17,18 +43,18 @@
 
 <header class="site-header" id="top">
   <div class="container header-inner">
-    <a href="index.html" class="logo">
+    <a href="/" class="logo">
       <span class="logo-mark" aria-hidden="true">W</span>
       Web<span class="accent">ys</span>
     </a>
     <nav class="main-nav" id="main-nav">
       <a href="sluzby.html">Služby</a>
       <a href="proces.html">Proces</a>
-      <a href="index.html#ukazka">Ukázka práce</a>
+      <a href="/#ukazka">Ukázka práce</a>
       <a href="cenik.html">Ceník</a>
-      <a href="index.html#kontakt">Kontakt</a>
+      <a href="/#kontakt">Kontakt</a>
     </nav>
-    <a href="index.html#kontakt" class="btn btn-primary btn-small header-cta">Poptat web</a>
+    <a href="/#kontakt" class="btn btn-primary btn-small header-cta">Poptat web</a>
     <button class="nav-toggle" id="nav-toggle" aria-label="Otevřít menu" aria-expanded="false">
       <span></span><span></span><span></span>
     </button>
@@ -40,9 +66,9 @@
   <!-- ÚVOD STRÁNKY -->
   <section class="page-header">
     <div class="container">
-      <a href="index.html" class="back-link">← Zpět na hlavní stránku</a>
+      <a href="/" class="back-link">← Zpět na hlavní stránku</a>
       <p class="eyebrow">Proces</p>
-      <h1>Jak probíhá spolupráce</h1>
+      <h1>Jak probíhá tvorba webových stránek</h1>
       <p class="hero-lead">
         Žádný z kroků není pevně daný. Pokud něco už máte hotové, klidně ho
         přeskočíme.
@@ -53,6 +79,8 @@
   <!-- ČASOVÁ OSA -->
   <section class="section">
     <div class="container">
+      <p class="section-tag center">Jak to funguje</p>
+      <h2 class="center">Čtyři kroky k hotovému webu</h2>
       <div class="timeline">
         <div class="timeline-item">
           <div class="timeline-marker">1</div>
@@ -91,7 +119,7 @@
     <div class="container center">
       <h2>Chcete začít?</h2>
       <p class="section-lead center">Stačí pár vět o tom, co děláte a jaký web byste chtěli.</p>
-      <a href="index.html#kontakt" class="btn btn-primary">Nezávazně poptat web</a>
+      <a href="/#kontakt" class="btn btn-primary">Nezávazně poptat web</a>
     </div>
   </section>
 
@@ -99,16 +127,16 @@
 
 <footer class="site-footer">
   <div class="container footer-inner">
-    <a href="index.html" class="logo">
+    <a href="/" class="logo">
       <span class="logo-mark" aria-hidden="true">W</span>
       Web<span class="accent">ys</span>
     </a>
     <nav class="footer-nav">
       <a href="sluzby.html">Služby</a>
       <a href="proces.html">Proces</a>
-      <a href="index.html#ukazka">Ukázka práce</a>
+      <a href="/#ukazka">Ukázka práce</a>
       <a href="cenik.html">Ceník</a>
-      <a href="index.html#kontakt">Kontakt</a>
+      <a href="/#kontakt">Kontakt</a>
     </nav>
     <p class="footer-meta">
       © 2026 Webys — Adam Šanda · IČO: 24552241
@@ -118,10 +146,10 @@
 </footer>
 
 <!-- COOKIE LIŠTA -->
-<div class="cookie-banner" id="cookie-banner" role="dialog" aria-live="polite" aria-label="Nastavení cookies" hidden>
+<div class="cookie-banner" id="cookie-banner" role="dialog" aria-live="polite" aria-labelledby="cookie-banner-title" hidden>
   <div class="cookie-banner-inner">
     <div class="cookie-banner-text">
-      <h2>Používáme cookies</h2>
+      <p id="cookie-banner-title" class="cookie-banner-title"><strong>Používáme cookies</strong></p>
       <p>
         Nezbytné cookies používáme vždy, aby web fungoval správně. Se souhlasem
         bychom rádi používali i analytické a marketingové cookies, díky kterým
@@ -143,7 +171,7 @@
 <div class="cookie-modal-overlay" id="cookie-modal-overlay" hidden>
   <div class="cookie-modal" role="dialog" aria-modal="true" aria-labelledby="cookie-modal-title">
     <button type="button" class="cookie-modal-close" id="cookie-modal-close" aria-label="Zavřít nastavení cookies">✕</button>
-    <h2 id="cookie-modal-title">Nastavení cookies</h2>
+    <p id="cookie-modal-title" class="cookie-modal-title">Nastavení cookies</p>
     <p>
       Vyberte si, které kategorie cookies nám povolíte. Nezbytné cookies nejde
       vypnout, protože bez nich by web nefungoval správně.

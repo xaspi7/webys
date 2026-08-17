@@ -528,6 +528,51 @@ h2 {
   display: block;
 }
 
+/* Click-to-load placeholder for the reference iframe */
+.showcase-iframe-wrap {
+  width: 100%;
+  height: 480px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg-alt);
+  gap: 12px;
+}
+
+.showcase-load-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  background: #fff;
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius);
+  padding: 24px 40px;
+  cursor: pointer;
+  font-family: var(--font);
+  color: var(--ink);
+  transition: border-color 0.2s, box-shadow 0.2s;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.showcase-load-btn:hover {
+  border-color: var(--purple);
+  box-shadow: var(--shadow);
+}
+
+.showcase-load-btn small {
+  font-size: 0.85rem;
+  color: var(--muted);
+  font-weight: 400;
+}
+
+.showcase-load-icon {
+  font-size: 1.4rem;
+  color: var(--purple);
+}
+
 /* Floating project card overlapping the bottom-right corner of the frame */
 .showcase-card {
   position: absolute;
@@ -876,6 +921,34 @@ h2 {
   .service-num { font-size: 1.4rem; }
 }
 
+/* -------------------- FAQ -------------------- */
+
+.faq-list {
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+.faq-item {
+  border-bottom: 1px solid var(--border);
+  padding: 28px 0;
+}
+
+.faq-item:first-child {
+  border-top: 1px solid var(--border);
+}
+
+.faq-item h3 {
+  font-size: 1.1rem;
+  margin: 0 0 12px;
+  color: var(--ink);
+}
+
+.faq-item p {
+  margin: 0;
+  color: var(--ink-soft);
+  font-size: 0.96rem;
+}
+
 /* -------------------- Cookie consent -------------------- */
 
 .link-btn,
@@ -928,9 +1001,10 @@ h2 {
 
 .cookie-banner-text { flex: 1 1 420px; }
 
-.cookie-banner-text h2 {
+.cookie-banner-text .cookie-banner-title {
   font-size: 1.05rem;
   margin: 0 0 8px;
+  font-weight: 700;
 }
 
 .cookie-banner-text p {
@@ -974,9 +1048,10 @@ h2 {
   box-shadow: var(--shadow);
 }
 
-.cookie-modal h2 {
+.cookie-modal .cookie-modal-title {
   font-size: 1.4rem;
   margin: 0 0 12px;
+  font-weight: 700;
 }
 
 .cookie-modal > p {
