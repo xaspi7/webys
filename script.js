@@ -88,6 +88,23 @@ function closeModal() {
   if (cookieModalOverlay) cookieModalOverlay.hidden = true;
 }
 
+const CLOUDFLARE_ANALYTICS_TOKEN = "10782ac1a5744f0e813aabcf1c9175d9d";
+
+function loadCloudflareAnalytics(consent) {
+  if (!consent?.analytics || document.querySelector("script[data-webys-cloudflare-analytics]")) return;
+
+  const script = document.createElement("script");
+  script.type = "module";
+  script.src = "https://static.cloudflareinsights.com/beacon.min.js";
+  script.dataset.cfBeacon = JSON.stringify({ token: CLOUDFLARE_ANALYTICS_TOKEN });
+  script.dataset.webysCloudflareAnalytics = "true";
+  document.head.appendChild(script);
+}
+
+document.addEventListener("webys:consent-changed", (event) => {
+  loadCloudflareAnalytics(event.detail);
+});
+
 const existingConsent = readConsent();
 if (!existingConsent || existingConsent.version !== CONSENT_VERSION) {
   showBanner();
