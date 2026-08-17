@@ -19,9 +19,10 @@ Webys je projekt Adama Šandy zaměřený na tvorbu webových stránek pro živn
 - Drobné úpravy — úpravy a doplňky webu po spuštění
 
 ## Ceník
-- Start: 3 500 Kč + DPH — jednostránkový web, základní struktura obsahu, mobilní verze, nasazení online
-- Pro: 6 900 Kč + DPH — homepage + podstránky, lepší struktura obsahu, formulář a základní měření
+- Start: 2 900 Kč — jednostránkový web, základní struktura obsahu, mobilní verze, nasazení online
+- Pro: 4 500 Kč — homepage + podstránky, lepší struktura obsahu, formulář a základní měření
 - Individuál: cena na dotaz — více stránek, specifický vzhled, pokročilejší funkce, řešení na míru
+- Webys není plátce DPH; uvedené ceny jsou konečné.
 
 ## Hlavní stránky
 - Homepage: https://webyss.cz/

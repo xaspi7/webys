@@ -470,6 +470,13 @@ h2 {
 
 .not-included strong { color: var(--ink-soft); }
 
+.pricing-note {
+  margin: 10px 0 0;
+  color: var(--ink-soft);
+  font-weight: 600;
+  text-align: center;
+}
+
 /* -------------------- Showcase -------------------- */
 
 .showcase {
