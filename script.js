@@ -1,34 +1,3 @@
-// Click-to-load the reference site without letting a slow remote page break the layout.
-const showcaseWrap = document.getElementById("showcase-iframe-wrap");
-const showcaseBtn = document.getElementById("showcase-load-btn");
-if (showcaseBtn && showcaseWrap) {
-  showcaseBtn.addEventListener("click", () => {
-    const iframe = document.createElement("iframe");
-    const status = document.createElement("p");
-    iframe.src = "https://breznovskytruhlar.cz/";
-    iframe.title = "Náhled webu Březnovský Truhlář";
-    iframe.referrerPolicy = "no-referrer";
-    iframe.className = "showcase-preview";
-    status.className = "showcase-status";
-    status.textContent = "Načítám živý náhled…";
-    showcaseWrap.replaceChildren(status, iframe);
-    showcaseWrap.classList.add("is-loading");
-
-    const showFallback = () => {
-      showcaseWrap.classList.remove("is-loading");
-      status.innerHTML = "Náhled se nepodařilo načíst. <a href=\"https://breznovskytruhlar.cz/\" target=\"_blank\" rel=\"noopener noreferrer\">Otevřít web v nové záložce</a>";
-    };
-
-    iframe.addEventListener("load", () => {
-      showcaseWrap.classList.remove("is-loading");
-      status.hidden = true;
-    }, { once: true });
-    window.setTimeout(() => {
-      if (!status.hidden) showFallback();
-    }, 10000);
-  }, { once: true });
-}
-
 // Mobile nav toggle
 const header = document.querySelector(".site-header");
 const navToggle = document.getElementById("nav-toggle");
