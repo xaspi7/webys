@@ -1040,9 +1040,10 @@ h2 {
   align-items: flex-start;
 }
 
-.cookie-category-head h3 {
+.cookie-category-title {
   margin: 0 0 6px;
   font-size: 1rem;
+  font-weight: 700;
 }
 
 .cookie-category-head p {

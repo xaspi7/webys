@@ -7,16 +7,17 @@
 <meta name="description" content="Přehledný ceník tvorby webových stránek — od jednostránkového webu Start (3 500 Kč) přes Pro (6 900 Kč) až po řešení na míru. Všechny ceny jsou bez DPH.">
 <link rel="canonical" href="https://webyss.cz/cenik.html">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2224%22 fill=%22%237c3aed%22/><text x=%2250%22 y=%2268%22 font-size=%2260%22 font-family=%22Arial%22 fill=%22white%22 text-anchor=%22middle%22>W</text></svg>">
-<!-- TODO: og:image — doplňte absolutní URL náhledového obrázku webu (doporučeno 1200×630 px) -->
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Webys">
 <meta property="og:title" content="Ceník tvorby webových stránek | Webys">
 <meta property="og:description" content="Přehledný ceník tvorby webových stránek — od jednostránkového webu Start (3 500 Kč) přes Pro (6 900 Kč) až po řešení na míru.">
 <meta property="og:url" content="https://webyss.cz/cenik.html">
+<meta property="og:image" content="https://webyss.cz/logo.png.png">
 <meta property="og:locale" content="cs_CZ">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Ceník tvorby webových stránek | Webys">
 <meta name="twitter:description" content="Přehledný ceník tvorby webových stránek — od jednostránkového webu Start (3 500 Kč) přes Pro (6 900 Kč) až po řešení na míru.">
+<meta name="twitter:image" content="https://webyss.cz/logo.png.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preload" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
@@ -53,7 +54,7 @@
         {
           "@type": "Offer",
           "name": "Pro",
-          "description": "Homepage a podstránky, lepší struktura obsahu, formulář a základní měření",
+          "description": "Homepage a podstránky, lepší struktura obsahu, formulář, základní měření a více prostoru pro důvěru",
           "priceSpecification": {
             "@type": "PriceSpecification",
             "price": "6900",
@@ -78,6 +79,22 @@
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "Ceny začínají na 3\u202f500 Kč + DPH za jednostránkový web (Start), 6\u202f900 Kč + DPH za web s podstránkami (Pro) a individuální řešení jsou na dotaz."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Jak dlouho tvorba webu trvá?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "TODO: Doplňte konkrétní dobu realizace."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Co je součástí ceny?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Balíček Start obsahuje jednostránkový web, základní strukturu obsahu, mobilní verzi a nasazení online. Balíček Pro navíc zahrnuje podstránky, kontaktní formulář a základní měření."
           }
         },
         {
@@ -117,7 +134,7 @@
 <header class="site-header" id="top">
   <div class="container header-inner">
     <a href="/" class="logo">
-      <img class="logo-mark" src="logo.png.png" alt="">
+      <img class="logo-mark" src="logo-optimized.png" alt="" width="96" height="64" decoding="async">
       Web<span class="accent">ys</span>
     </a>
     <nav class="main-nav" id="main-nav">
@@ -207,7 +224,7 @@
         </div>
         <div class="faq-item">
           <h3>Jak dlouho tvorba webu trvá?</h3>
-          <p><!-- TODO: doplňte konkrétní dobu realizace --></p>
+          <p>TODO: Doplňte konkrétní dobu realizace.</p>
         </div>
         <div class="faq-item">
           <h3>Co je součástí ceny?</h3>
@@ -233,7 +250,7 @@
 <footer class="site-footer">
   <div class="container footer-inner">
     <a href="/" class="logo">
-      <img class="logo-mark" src="logo.png.png" alt="">
+      <img class="logo-mark" src="logo-optimized.png" alt="" width="96" height="64" decoding="async">
       Web<span class="accent">ys</span>
     </a>
     <nav class="footer-nav">
@@ -289,7 +306,7 @@
           <span class="switch-slider"></span>
         </label>
         <div>
-          <h3>Nezbytné cookies</h3>
+          <p class="cookie-category-title">Nezbytné cookies</p>
           <p>Umožňují základní fungování webu (např. zapamatování vaší volby ohledně cookies). Vždy aktivní.</p>
         </div>
       </div>
@@ -302,7 +319,7 @@
           <span class="switch-slider"></span>
         </label>
         <div>
-          <h3>Analytické cookies</h3>
+          <p class="cookie-category-title">Analytické cookies</p>
           <p>Pomáhají nám anonymně pochopit návštěvnost a chování na webu, abychom ho mohli zlepšovat.</p>
         </div>
       </div>
@@ -315,7 +332,7 @@
           <span class="switch-slider"></span>
         </label>
         <div>
-          <h3>Marketingové cookies</h3>
+          <p class="cookie-category-title">Marketingové cookies</p>
           <p>Slouží k zobrazování relevantnější nabídky a měření účinnosti případné reklamy.</p>
         </div>
       </div>
