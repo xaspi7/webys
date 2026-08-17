@@ -525,6 +525,24 @@ h2 {
   display: block;
 }
 
+.showcase-preview { background: #fff; }
+
+.showcase-status {
+  display: none;
+  margin: 0;
+  padding: 16px 24px;
+  color: var(--muted);
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+.showcase-status a { color: var(--purple); font-weight: 600; }
+
+.showcase-iframe-wrap.is-loading .showcase-status,
+.showcase-iframe-wrap:not(:has(.showcase-load-btn)) .showcase-status {
+  display: block;
+}
+
 /* Click-to-load placeholder for the reference iframe */
 .showcase-iframe-wrap {
   width: 100%;
@@ -570,12 +588,11 @@ h2 {
   color: var(--purple);
 }
 
-/* Floating project card overlapping the bottom-right corner of the frame */
+/* Keep the project card close to the preview without covering its content. */
 .showcase-card {
-  position: absolute;
-  right: 32px;
-  bottom: -40px;
-  width: 300px;
+  position: relative;
+  width: min(360px, calc(100% - 64px));
+  margin: -24px 32px 0 auto;
   background: #fff;
   border: 1px solid var(--border);
   border-radius: var(--radius);
