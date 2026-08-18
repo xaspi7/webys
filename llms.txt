@@ -1,9 +1,9 @@
-# Webys — tvorba webových stránek
+# WEBYSS — tvorba webových stránek
 
-Webys je projekt Adama Šandy zaměřený na tvorbu webových stránek pro živnostníky a malé firmy.
+WEBYSS je projekt Adama Šandy zaměřený na tvorbu webových stránek pro živnostníky a malé firmy.
 
 ## Identifikace
-- Název: Webys
+- Název: WEBYSS
 - Provozovatel: Adam Šanda
 - IČO: 24552241
 - E-mail: webyswebys@gmail.com
@@ -22,7 +22,7 @@ Webys je projekt Adama Šandy zaměřený na tvorbu webových stránek pro živn
 - Start: 2 900 Kč — jednostránkový web, základní struktura obsahu, mobilní verze, nasazení online
 - Pro: 4 500 Kč — homepage + podstránky, lepší struktura obsahu, formulář a základní měření
 - Individuál: cena na dotaz — více stránek, specifický vzhled, pokročilejší funkce, řešení na míru
-- Webys není plátce DPH; uvedené ceny jsou konečné.
+- WEBYSS není plátce DPH; uvedené ceny jsou konečné.
 
 ## Hlavní stránky
 - Homepage: https://webyss.cz/
