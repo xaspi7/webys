@@ -1601,3 +1601,217 @@ h2 {
   .cookie-modal-actions .btn { width: 100%; }
 }
 
+/* -------------------- WEBYSS angular visual system -------------------- */
+
+:root {
+  --purple: #5a22ff;
+  --purple-dark: #4216d6;
+  --purple-light: #8e5cff;
+  --purple-tint: #f1edff;
+  --border: #e5ddff;
+  --ink: #151126;
+  --ink-soft: #625d75;
+  --bg-alt: #f8f5ff;
+  --radius: 8px;
+}
+
+.site-header {
+  background: rgba(255, 255, 255, 0.94);
+  border-bottom-color: #e8e0ff;
+}
+
+.container { max-width: 1000px; }
+
+.main-nav a {
+  font-weight: 600;
+  color: #57516a;
+}
+
+.main-nav a:hover { color: var(--purple); }
+
+.btn {
+  min-height: 42px;
+  padding: 0 28px 0 20px;
+  border-radius: 0;
+  clip-path: polygon(0 0, calc(100% - 13px) 0, 100% 50%, calc(100% - 13px) 100%, 0 100%);
+  font-size: 0.82rem;
+  font-weight: 700;
+  transition: filter 0.15s ease, transform 0.15s ease;
+}
+
+.btn-small {
+  min-height: 34px;
+  padding: 0 22px 0 15px;
+  font-size: 0.72rem;
+}
+
+.btn-primary {
+  background: #6530f4;
+  box-shadow: none;
+}
+
+.btn-primary:hover {
+  transform: translateY(-1px);
+  box-shadow: none;
+  filter: brightness(1.08);
+}
+
+.btn-ghost {
+  border: 1px solid #bcb0e9;
+  background: rgba(255, 255, 255, 0.76);
+  color: var(--ink);
+}
+
+.btn-ghost:hover {
+  border-color: var(--purple);
+  color: var(--purple);
+  transform: translateY(-1px);
+}
+
+.header-cta { min-height: 36px; }
+
+.section {
+  background: rgba(255, 255, 255, 0.88);
+}
+
+.section-alt {
+  background: linear-gradient(90deg, rgba(246, 241, 255, 0.94), rgba(251, 249, 255, 0.86));
+}
+
+.section-tag,
+.pricing-eyebrow,
+.pricing-label {
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+}
+
+h2 {
+  font-size: clamp(1.45rem, 3vw, 2rem);
+  letter-spacing: -0.025em;
+}
+
+.hero,
+.page-header {
+  background: rgba(255, 255, 255, 0.88);
+}
+
+.hero-glow,
+.hero-glow-teal { display: none; }
+
+.hero h1,
+.page-header h1 {
+  letter-spacing: -0.04em;
+}
+
+.hero-lead,
+.section-lead { font-size: 0.88rem; }
+
+.eyebrow {
+  padding: 4px 11px;
+  border-radius: 0;
+  background: var(--purple-tint);
+  color: var(--purple);
+  font-size: 0.7rem;
+  font-weight: 800;
+}
+
+.back-link {
+  color: #78728d;
+  font-size: 0.75rem;
+}
+
+.card,
+.contact-form,
+.showcase-frame,
+.showcase-card,
+.pricing-offer,
+.pricing-example,
+.pricing-cta {
+  border-radius: 5px;
+  box-shadow: none;
+}
+
+.showcase-frame {
+  border-color: #e0d5ff;
+  box-shadow: 0 10px 26px rgba(90, 34, 255, 0.07);
+}
+
+.browser-bar { background: #fbfaff; }
+
+.home-page .showcase-card {
+  border-color: #e1d8ff;
+  box-shadow: 0 12px 26px rgba(90, 34, 255, 0.12);
+}
+
+.showcase-card .btn,
+.pricing-button,
+.pricing-cta .btn { clip-path: polygon(0 0, calc(100% - 13px) 0, 100% 50%, calc(100% - 13px) 100%, 0 100%); }
+
+.contact-form {
+  background: #faf8ff;
+  border-color: #e3dbff;
+}
+
+.contact-form input,
+.contact-form textarea { font-size: 0.88rem; }
+
+.contact-form button { width: 100%; }
+
+.services-page .service-row {
+  border-color: #e4dcff;
+}
+
+.services-page .service-num {
+  color: #d9ceff;
+  font-weight: 700;
+}
+
+.services-page .service-row:hover {
+  padding-left: 0;
+  background: rgba(241, 237, 255, 0.48);
+}
+
+.services-page .service-row:hover .service-body h3,
+.services-page .service-row:nth-child(even):hover .service-body h3 { color: var(--ink); }
+
+.audience-item { border-color: #ded4ff; }
+
+.process-page .timeline::before { background: #ded4ff; }
+
+.timeline-marker {
+  width: 30px;
+  height: 30px;
+  left: -45px;
+  background: #ede7ff;
+  color: var(--purple);
+  font-size: 0.78rem;
+}
+
+.process-page .timeline-item:nth-child(even) .timeline-marker {
+  background: #dff8f4;
+  color: #139887;
+}
+
+.pricing-page {
+  background: rgba(255, 255, 255, 0.9);
+}
+
+.pricing-offer,
+.pricing-example { border-color: #e0d6ff; }
+
+.pricing-cta { border-color: #e1d8ff; }
+
+.site-footer { background: #151126; }
+
+@media (max-width: 560px) {
+  .site-header { backdrop-filter: none; }
+  .header-inner { min-height: 56px; }
+  .logo { width: 126px; height: 42px; }
+  .hero { padding-top: 76px; }
+  .hero h1 { font-size: 2.15rem; }
+  .page-header { padding-top: 62px; }
+  .section { padding: 60px 0; }
+  .btn { min-height: 40px; }
+}
+
