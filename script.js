@@ -75,7 +75,8 @@ function closeModal() {
 }
 
 function loadUmamiAnalytics(consent) {
-  if (!consent?.analytics || document.querySelector("script[data-webys-umami-analytics]")) return;
+  const isProductionHost = ["webyss.cz", "www.webyss.cz"].includes(window.location.hostname);
+  if (!isProductionHost || !consent?.analytics || document.querySelector("script[data-webys-umami-analytics]")) return;
 
   const script = document.createElement("script");
   script.defer = true;
