@@ -42,30 +42,14 @@
       "itemListElement": [
         {
           "@type": "Offer",
-          "name": "Start",
-          "description": "Jednostránkový web, základní struktura obsahu, mobilní verze, nasazení online",
-          "priceSpecification": {
-            "@type": "PriceSpecification",
-            "price": "2900",
-            "priceCurrency": "CZK",
-            "valueAddedTaxIncluded": true
-          }
-        },
-        {
-          "@type": "Offer",
-          "name": "Pro",
-          "description": "Homepage a podstránky, lepší struktura obsahu, formulář, základní měření a více prostoru pro důvěru",
+          "name": "Web na míru",
+          "description": "Responzivní web, kontaktní formulář, základní SEO, předání a zaškolení.",
           "priceSpecification": {
             "@type": "PriceSpecification",
             "price": "4500",
             "priceCurrency": "CZK",
-            "valueAddedTaxIncluded": true
+            "valueAddedTaxIncluded": false
           }
-        },
-        {
-          "@type": "Offer",
-          "name": "Individuál",
-          "description": "Více stránek, specifický vzhled, pokročilejší funkce, řešení na míru"
         }
       ]
     },
@@ -73,54 +57,12 @@
       "@type": "FAQPage",
       "url": "https://webyss.cz/cenik.html",
       "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "Kolik stojí tvorba webových stránek?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Start stojí 2 900 Kč a Pro 4 500 Kč. Nejsem plátce DPH. Individuální řešení jsou na dotaz."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Jak dlouho tvorba webu trvá?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "TODO: Doplňte konkrétní dobu realizace."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Co je součástí ceny?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Balíček Start obsahuje jednostránkový web, základní strukturu obsahu, mobilní verzi a nasazení online. Balíček Pro navíc zahrnuje podstránky, kontaktní formulář a základní měření."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Je web přizpůsobený mobilním telefonům?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Ano, každý web je plně responzivní a funguje správně na telefonech, tabletech i počítačích."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Co potřebuji dodat před začátkem spolupráce?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Stačí zaslat texty, kontakty, fotky nebo jen základní informace o vašem podnikání."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Je možné web později upravovat?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Ano, po spuštění je možné web doplnit nebo přepsat libovolnou část. Stačí napsat."
-          }
-        }
+        {"@type": "Question", "name": "Kolik stojí tvorba webových stránek?", "acceptedAnswer": {"@type": "Answer", "text": "Typický web stojí kolem 4 500 Kč bez DPH. Rozsáhlejší nebo specifické projekty jsou individuální."}},
+        {"@type": "Question", "name": "Jak dlouho tvorba webu trvá?", "acceptedAnswer": {"@type": "Answer", "text": "Doba realizace záleží na rozsahu a připravenosti podkladů."}},
+        {"@type": "Question", "name": "Co je součástí ceny?", "acceptedAnswer": {"@type": "Answer", "text": "V ceně je responzivní web, kontaktní formulář, základní SEO, předání a zaškolení."}},
+        {"@type": "Question", "name": "Je web přizpůsobený mobilním telefonům?", "acceptedAnswer": {"@type": "Answer", "text": "Ano, každý web je plně responzivní a funguje na telefonech, tabletech i počítačích."}},
+        {"@type": "Question", "name": "Co potřebuji dodat před začátkem spolupráce?", "acceptedAnswer": {"@type": "Answer", "text": "Stačí texty, kontakty, fotky nebo základní informace o vašem podnikání."}},
+        {"@type": "Question", "name": "Je možné web později upravovat?", "acceptedAnswer": {"@type": "Answer", "text": "Ano, po spuštění lze libovolnou část webu doplnit nebo upravit."}}
       ]
     }
   ]
@@ -152,20 +94,48 @@
 
 <main>
 
-  <!-- ÚVOD STRÁNKY -->
-  <section class="page-header">
+  <!-- CENÍK -->
+  <section class="pricing-page">
     <div class="container">
-      <a href="/" class="back-link">← Zpět na hlavní stránku</a>
-      <p class="eyebrow">Ceník</p>
-      <h1>Kolik stojí tvorba webových stránek</h1>
-      <p class="hero-lead">
-        Tři jasné varianty. Žádné skryté položky, žádné dlouhé smlouvy.
-      </p>
+      <p class="pricing-eyebrow">Ceník</p>
+      <h1>Web kolem <span>4 500 Kč</span></h1>
+      <div class="pricing-offer">
+        <div class="pricing-price-block">
+          <p class="pricing-label">V ceně je</p>
+          <p class="pricing-from">od</p>
+          <p class="pricing-amount">4 500 Kč</p>
+          <p class="pricing-vat">bez DPH</p>
+          <a href="/#kontakt" class="btn btn-primary pricing-button">Poptat web <span aria-hidden="true">→</span></a>
+        </div>
+        <ul class="pricing-features">
+          <li><span class="pricing-feature-icon" aria-hidden="true">▣</span>Responzivní web</li>
+          <li><span class="pricing-feature-icon" aria-hidden="true">▤</span>Kontaktní formulář</li>
+          <li><span class="pricing-feature-icon" aria-hidden="true">⌕</span>Základní SEO</li>
+          <li><span class="pricing-feature-icon" aria-hidden="true">◇</span>Předání a zaškolení</li>
+        </ul>
+      </div>
+      <div class="pricing-examples">
+        <p class="pricing-eyebrow">Příklady z praxe</p>
+        <h2>Typické zadání</h2>
+        <div class="pricing-example-list">
+          <div class="pricing-example"><span>Jednoduchý web pro řemeslníka</span><strong>kolem 3 500 Kč</strong></div>
+          <div class="pricing-example"><span>Firemní web se službami</span><strong>kolem 4 500 Kč</strong></div>
+          <div class="pricing-example"><span>Rozsáhlejší nebo specifický web</span><strong>individuálně</strong></div>
+        </div>
+      </div>
+      <aside class="pricing-cta" aria-label="Poptávka webu">
+        <span class="pricing-cta-icon" aria-hidden="true">◌</span>
+        <div>
+          <strong>Nejste si jistí, co je pro vás ideální?</strong>
+          <p>Ozvěte se nám - rádi s vámi probereme vaše potřeby.</p>
+        </div>
+        <a href="/#kontakt" class="btn btn-primary btn-small">Poptat web <span aria-hidden="true">→</span></a>
+      </aside>
     </div>
   </section>
 
   <!-- CENÍK -->
-  <section class="section">
+  <section class="section" hidden>
     <div class="container">
       <p class="section-tag center">Varianty</p>
       <h2 class="center">Vyberte si variantu</h2>
