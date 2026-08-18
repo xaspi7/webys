@@ -1815,3 +1815,118 @@ h2 {
   .btn { min-height: 40px; }
 }
 
+/* Pricing composition matched to the compact reference layout. */
+.pricing-page {
+  padding: 0 0 52px;
+  background:
+    radial-gradient(circle at 88% 6%, rgba(153, 91, 255, 0.2), transparent 24%),
+    #fff;
+}
+
+.pricing-page .container {
+  max-width: 640px;
+  padding-right: 34px;
+  padding-left: 34px;
+}
+
+.pricing-page h1 {
+  max-width: 430px;
+  margin-bottom: 28px;
+  font-size: clamp(2.45rem, 8vw, 3.25rem);
+  line-height: 1.02;
+  letter-spacing: -0.04em;
+}
+
+.pricing-eyebrow,
+.pricing-label {
+  margin-bottom: 8px;
+  font-size: 0.68rem;
+  letter-spacing: 0.035em;
+}
+
+.pricing-offer {
+  grid-template-columns: 0.9fr 1.1fr;
+  min-height: 222px;
+  border-radius: 5px;
+  background: rgba(255, 255, 255, 0.94);
+}
+
+.pricing-price-block {
+  padding: 25px 31px 22px;
+}
+
+.pricing-from,
+.pricing-vat { font-size: 0.76rem; }
+
+.pricing-amount {
+  margin: 7px 0 6px;
+  font-size: clamp(2.2rem, 7.3vw, 3.1rem);
+  white-space: nowrap;
+}
+
+.pricing-button {
+  min-height: 36px;
+  margin-top: 18px;
+  padding-right: 24px;
+  padding-left: 16px;
+  font-size: 0.72rem;
+}
+
+.pricing-features { padding: 13px 31px; }
+
+.pricing-features li {
+  gap: 14px;
+  min-height: 47px;
+  padding: 10px 0;
+  font-size: 0.76rem;
+}
+
+.pricing-feature-icon { width: 23px; font-size: 1.35rem; }
+
+.pricing-examples { margin-top: 30px; }
+
+.pricing-examples h2 {
+  margin-bottom: 4px;
+  font-size: 1.25rem;
+  line-height: 1.1;
+}
+
+.pricing-example-list { gap: 5px; }
+
+.pricing-example {
+  min-height: 51px;
+  padding: 12px 18px;
+  border-radius: 4px;
+  font-size: 0.75rem;
+}
+
+.pricing-example strong { font-size: 0.76rem; }
+
+.pricing-cta {
+  min-height: 66px;
+  gap: 13px;
+  margin-top: 8px;
+  padding: 10px 18px;
+  border-radius: 4px;
+}
+
+.pricing-cta-icon {
+  width: 42px;
+  height: 42px;
+  font-size: 1.55rem;
+}
+
+.pricing-cta strong { font-size: 0.75rem; }
+.pricing-cta p { font-size: 0.62rem; }
+.pricing-cta .btn { min-height: 36px; font-size: 0.72rem; }
+
+@media (max-width: 560px) {
+  .pricing-page { padding-top: 28px; }
+  .pricing-page .container { padding-right: 20px; padding-left: 20px; }
+  .pricing-page h1 { font-size: 2.3rem; }
+  .pricing-offer { grid-template-columns: 1fr; min-height: 0; }
+  .pricing-price-block { padding: 24px; }
+  .pricing-features { padding: 8px 24px; }
+  .pricing-example { font-size: 0.76rem; }
+}
+
