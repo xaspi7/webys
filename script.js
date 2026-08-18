@@ -74,21 +74,19 @@ function closeModal() {
   if (cookieModalOverlay) cookieModalOverlay.hidden = true;
 }
 
-const CLOUDFLARE_ANALYTICS_TOKEN = "10782ac1a5744f0e813aabcf1c9175d9d";
-
-function loadCloudflareAnalytics(consent) {
-  if (!consent?.analytics || document.querySelector("script[data-webys-cloudflare-analytics]")) return;
+function loadUmamiAnalytics(consent) {
+  if (!consent?.analytics || document.querySelector("script[data-webys-umami-analytics]")) return;
 
   const script = document.createElement("script");
-  script.type = "module";
-  script.src = "https://static.cloudflareinsights.com/beacon.min.js";
-  script.dataset.cfBeacon = JSON.stringify({ token: CLOUDFLARE_ANALYTICS_TOKEN });
-  script.dataset.webysCloudflareAnalytics = "true";
+  script.defer = true;
+  script.src = "https://cloud.umami.is/script.js";
+  script.dataset.websiteId = "0339814b-e0af-4d9e-b5ec-0728bd22f00a";
+  script.dataset.webysUmamiAnalytics = "true";
   document.head.appendChild(script);
 }
 
 document.addEventListener("webys:consent-changed", (event) => {
-  loadCloudflareAnalytics(event.detail);
+  loadUmamiAnalytics(event.detail);
 });
 
 const existingConsent = readConsent();
