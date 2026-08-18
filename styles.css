@@ -124,15 +124,13 @@ a { color: inherit; text-decoration: none; }
   display: flex;
   align-items: center;
   width: 180px;
-  height: 48px;
+  height: 60px;
   margin-right: auto;
 }
 
 .logo-image {
   width: 100%;
-  height: 100%;
-  object-fit: contain;
-  object-position: left center;
+  height: auto;
 }
 
 .main-nav {
@@ -800,7 +798,7 @@ h2 {
 
 .site-footer .logo {
   width: 240px;
-  height: 64px;
+  height: 80px;
 }
 
 .site-footer .logo-image {
