@@ -1930,3 +1930,100 @@ h2 {
   .pricing-example { font-size: 0.76rem; }
 }
 
+/* Restore the original site styling everywhere except the reference-matched pricing page. */
+body:not(.pricing-page-body) {
+  color: #1a1523;
+  background: #fff;
+}
+
+body:not(.pricing-page-body) .container { max-width: 1120px; }
+
+body:not(.pricing-page-body) .site-header {
+  background: rgba(255, 255, 255, 0.85);
+  border-bottom-color: #e8e1f4;
+}
+
+body:not(.pricing-page-body) .header-inner {
+  gap: 24px;
+  min-height: 0;
+  padding-top: 16px;
+  padding-bottom: 16px;
+}
+
+body:not(.pricing-page-body) .logo { width: 180px; height: 60px; }
+body:not(.pricing-page-body) .main-nav { gap: 28px; }
+body:not(.pricing-page-body) .main-nav a { color: #574f66; font-size: 0.96rem; font-weight: 500; }
+body:not(.pricing-page-body) .main-nav a:hover { color: #7c3aed; }
+body:not(.pricing-page-body) .header-cta { margin-left: 8px; }
+
+body:not(.pricing-page-body) .btn {
+  min-height: 0;
+  padding: 15px 28px;
+  border-radius: 999px;
+  clip-path: none;
+  font-size: 0.98rem;
+  font-weight: 600;
+}
+
+body:not(.pricing-page-body) .btn-small { padding: 11px 20px; font-size: 0.9rem; }
+
+body:not(.pricing-page-body) .btn-primary {
+  background: linear-gradient(135deg, #7c3aed, #a855f7);
+  box-shadow: 0 8px 20px rgba(124, 58, 237, 0.28);
+}
+
+body:not(.pricing-page-body) .btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 26px rgba(124, 58, 237, 0.35);
+  filter: none;
+}
+
+body:not(.pricing-page-body) .btn-ghost {
+  border: 1.5px solid #e8e1f4;
+  background: #fff;
+  color: #1a1523;
+}
+
+body:not(.pricing-page-body) .btn-ghost:hover {
+  border-color: #7c3aed;
+  color: #7c3aed;
+  transform: translateY(-2px);
+}
+
+body:not(.pricing-page-body) .section { padding: 76px 0; background: rgba(255, 255, 255, 0.62); }
+body:not(.pricing-page-body) .section-alt { background: rgba(244, 238, 252, 0.62); }
+body:not(.pricing-page-body) .section-tag { color: #7c3aed; font-size: 0.85rem; }
+body:not(.pricing-page-body) h2 { font-size: clamp(1.65rem, 3vw, 2.15rem); }
+body:not(.pricing-page-body) .hero,
+body:not(.pricing-page-body) .page-header { background: linear-gradient(180deg, rgba(251, 249, 255, 0.22), rgba(255, 255, 255, 0.3)); }
+body:not(.pricing-page-body) .hero-glow,
+body:not(.pricing-page-body) .hero-glow-teal { display: block; }
+body:not(.pricing-page-body) .hero h1,
+body:not(.pricing-page-body) .page-header h1 { letter-spacing: -0.02em; }
+body:not(.pricing-page-body) .hero-lead,
+body:not(.pricing-page-body) .section-lead { font-size: 1rem; }
+body:not(.pricing-page-body) .eyebrow {
+  padding: 8px 16px;
+  border-radius: 999px;
+  background: #f1e8ff;
+  color: #6926d1;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+body:not(.pricing-page-body) .back-link { color: #8a8296; font-size: 0.9rem; }
+body:not(.pricing-page-body) .card,
+body:not(.pricing-page-body) .contact-form,
+body:not(.pricing-page-body) .showcase-frame,
+body:not(.pricing-page-body) .showcase-card { border-radius: 20px; }
+body:not(.pricing-page-body) .contact-form { background: #f4eefc; border-color: #e8e1f4; }
+body:not(.pricing-page-body) .showcase-frame { border-color: #e8e1f4; box-shadow: 0 10px 30px rgba(124, 58, 237, 0.1); }
+body:not(.pricing-page-body) .browser-bar { background: #f4eefc; }
+body:not(.pricing-page-body) .site-footer { background: #150f22; }
+
+@media (max-width: 560px) {
+  body:not(.pricing-page-body) .header-inner { min-height: 0; }
+  body:not(.pricing-page-body) .logo { width: 180px; height: 60px; }
+  body:not(.pricing-page-body) .btn { min-height: 0; }
+}
+
