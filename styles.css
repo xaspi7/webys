@@ -2205,3 +2205,58 @@ body:not(.pricing-page-body) .site-footer { background: #150f22; }
   body:not(.pricing-page-body) .btn { min-height: 0; }
 }
 
+/* -------------------- Button system: primary / secondary / tertiary-outline -------------------- */
+/* Forced with !important to win over the page-scoped overrides above, site-wide. */
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--purple), var(--purple-light)) !important;
+  color: #fff !important;
+}
+
+.btn-primary:hover {
+  background: linear-gradient(135deg, var(--purple-dark), var(--purple)) !important;
+  filter: none !important;
+}
+
+.btn-secondary {
+  background: #fff !important;
+  color: var(--purple) !important;
+  border: 1.5px solid var(--purple) !important;
+  box-shadow: none !important;
+  border-radius: 8px !important;
+  clip-path: polygon(0 0, 100% 0, 100% calc(100% - 14px), calc(100% - 14px) 100%, 0 100%) !important;
+}
+
+.btn-secondary:hover {
+  background: var(--purple-tint) !important;
+  border-color: var(--purple-dark) !important;
+  color: var(--purple-dark) !important;
+  transform: translateY(-2px);
+}
+
+.btn-secondary.btn-small {
+  border-radius: 6px !important;
+  clip-path: polygon(0 0, 100% 0, 100% calc(100% - 11px), calc(100% - 11px) 100%, 0 100%) !important;
+}
+
+.btn-ghost {
+  background: #fff !important;
+  color: var(--purple) !important;
+  border: 1.5px solid var(--border) !important;
+  box-shadow: none !important;
+  border-radius: 8px !important;
+  clip-path: polygon(0 0, 100% 0, 100% calc(100% - 14px), calc(100% - 14px) 100%, 0 100%) !important;
+}
+
+.btn-ghost:hover {
+  border-color: var(--purple) !important;
+  background: var(--purple-tint) !important;
+  color: var(--purple-dark) !important;
+  transform: translateY(-2px);
+}
+
+.btn-ghost.btn-small {
+  border-radius: 6px !important;
+  clip-path: polygon(0 0, 100% 0, 100% calc(100% - 11px), calc(100% - 11px) 100%, 0 100%) !important;
+}
+
