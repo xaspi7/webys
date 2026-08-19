@@ -241,8 +241,8 @@ h2 {
   inset: 0;
   z-index: -1;
   pointer-events: none;
-  background: linear-gradient(135deg, rgba(124, 58, 237, 0.05), rgba(124, 58, 237, 0.015) 55%, transparent 55%);
-  clip-path: polygon(62% 0, 100% 0, 100% 100%, 82% 100%, 62% 84%);
+  background: rgba(124, 58, 237, 0.05);
+  clip-path: polygon(40% 0, 100% 0, 100% 100%, 60% 100%, 40% 78%);
 }
 
 .eyebrow {
