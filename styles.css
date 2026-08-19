@@ -828,22 +828,8 @@ h2 {
   clip-path: polygon(0 0, 100% 0, 100% calc(100% - 20px), calc(100% - 20px) 100%, 0 100%);
 }
 
-.showcase-avatar {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 44px;
-  height: 44px;
-  border-radius: 50%;
-  background: var(--purple-tint);
-  color: var(--purple-dark);
-  font-weight: 800;
-  font-size: 1.1rem;
-  margin-bottom: 16px;
-}
-
-.showcase-card h3 { font-size: 1.15rem; margin: 0 0 8px; }
-.showcase-card p { color: var(--ink-soft); font-size: 0.92rem; margin: 0 0 18px; }
+.showcase-card h3 { font-size: 1.35rem; margin: 0 0 12px; }
+.showcase-card p { color: var(--ink-soft); font-size: 1rem; line-height: 1.6; margin: 0 0 20px; }
 .showcase-card .tags { margin: 0 0 20px; }
 .showcase-card .btn { width: 100%; }
 
@@ -1385,18 +1371,12 @@ h2 {
     border-radius: 18px;
   }
 
-  .showcase-avatar {
-    width: 38px;
-    height: 38px;
-    margin-bottom: 12px;
-  }
-
   .showcase-card h3 {
-    font-size: 1.05rem;
+    font-size: 1.2rem;
   }
 
   .showcase-card p {
-    font-size: 0.9rem;
+    font-size: 0.96rem;
     line-height: 1.55;
   }
 
