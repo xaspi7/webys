@@ -36,17 +36,6 @@ body {
   position: relative;
 }
 
-/* Floating network / "web" canvas — fixed to the viewport so it shows
-   through every translucent section across the whole site, not just the hero */
-#network-bg {
-  position: fixed;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 0;
-  pointer-events: none;
-}
-
 img { max-width: 100%; display: block; }
 
 a { color: inherit; text-decoration: none; }
@@ -181,7 +170,18 @@ a { color: inherit; text-decoration: none; }
 }
 
 .section-alt {
+  position: relative;
   background: rgba(244, 238, 252, 0.62);
+}
+
+.section-alt::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background: linear-gradient(315deg, rgba(124, 58, 237, 0.05), transparent 55%);
+  clip-path: polygon(0 58%, 24% 100%, 0 100%);
 }
 
 .section-tag {
@@ -222,6 +222,27 @@ h2 {
   position: relative;
   z-index: 1;
   max-width: 780px;
+}
+
+/* Subtle brand-shape decoration: soft purple glow + one large chamfered
+   fragment echoing the CTA-button corner cut. Static, low-contrast, CSS-only. */
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background: radial-gradient(circle at 86% 12%, rgba(124, 58, 237, 0.08) 0%, rgba(124, 58, 237, 0.03) 35%, transparent 70%);
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background: linear-gradient(135deg, rgba(124, 58, 237, 0.05), rgba(124, 58, 237, 0.015) 55%, transparent 55%);
+  clip-path: polygon(62% 0, 100% 0, 100% 100%, 82% 100%, 62% 84%);
 }
 
 .eyebrow {
@@ -291,8 +312,28 @@ h2 {
 .page-header {
   position: relative;
   z-index: 1;
+  overflow: hidden;
   padding: 72px 0 58px;
   background: linear-gradient(180deg, rgba(251, 249, 255, 0.22) 0%, rgba(255, 255, 255, 0.3) 100%);
+}
+
+.page-header::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background: radial-gradient(circle at 86% 12%, rgba(124, 58, 237, 0.08) 0%, rgba(124, 58, 237, 0.03) 35%, transparent 70%);
+}
+
+.page-header::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background: linear-gradient(135deg, rgba(124, 58, 237, 0.05), rgba(124, 58, 237, 0.015) 55%, transparent 55%);
+  clip-path: polygon(62% 0, 100% 0, 100% 100%, 82% 100%, 62% 84%);
 }
 
 .back-link {
@@ -1140,6 +1181,11 @@ h2 {
   .section { padding: 70px 0; }
   .hero { padding: 110px 0 70px; }
   .page-header { padding: 120px 0 50px; }
+  .hero::after,
+  .page-header::after,
+  .section-alt::before { display: none; }
+  .hero::before,
+  .page-header::before { opacity: 0.6; }
   .pricing-page { padding: 108px 0 64px; }
   .pricing-page h1 { margin-bottom: 32px; }
   .pricing-offer { grid-template-columns: 1fr; }
@@ -1985,7 +2031,6 @@ h2 {
 }
 
 /* Keep the pricing page focused on the reference composition. */
-.pricing-page-body #network-bg,
 .pricing-page-body .site-header,
 .pricing-page-body .section,
 .pricing-page-body .site-footer,
