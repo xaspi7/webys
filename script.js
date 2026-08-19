@@ -227,8 +227,8 @@ if (contactForm) {
   });
 }
 
-// Floating "network" background in the hero — dots drifting slowly and
-// connecting with thin lines when close, like a loose spider web.
+// Floating soft chamfered-corner shapes drifting behind the content — echoes
+// the site's button/card shape language instead of a generic dot grid.
 // Fixed to the viewport so it stays visible behind every page as you scroll.
 const canvas = document.getElementById("network-bg");
 
@@ -239,25 +239,27 @@ if (canvas && canvas.getContext) {
   let dpr = Math.min(window.devicePixelRatio || 1, 2);
   let width = 0;
   let height = 0;
-  let nodes = [];
+  let shapes = [];
 
-  const LINK_DISTANCE = 150;
-  const NODE_COLOR = "124, 58, 237"; // purple
-  const LINE_COLOR = "124, 58, 237";
-
-  function nodeCountFor(area) {
-    return Math.min(90, Math.max(32, Math.round(area / 14000)));
+  function shapeCountFor(area) {
+    return Math.min(5, Math.max(3, Math.round(area / 480000)));
   }
 
-  function createNodes() {
-    const count = nodeCountFor(width * height);
-    nodes = Array.from({ length: count }, () => ({
-      x: Math.random() * width,
-      y: Math.random() * height,
-      vx: (Math.random() - 0.5) * 0.25,
-      vy: (Math.random() - 0.5) * 0.25,
-      r: Math.random() * 1.6 + 1,
-    }));
+  function createShapes() {
+    const count = shapeCountFor(width * height);
+    shapes = Array.from({ length: count }, () => {
+      const size = Math.random() * 260 + 280;
+      return {
+        x: Math.random() * width,
+        y: Math.random() * height,
+        size,
+        chamfer: size * 0.24,
+        angle: Math.random() * Math.PI * 2,
+        vx: (Math.random() - 0.5) * 0.05,
+        vy: (Math.random() - 0.5) * 0.05,
+        vAngle: (Math.random() - 0.5) * 0.0006,
+      };
+    });
   }
 
   function resize() {
@@ -268,48 +270,47 @@ if (canvas && canvas.getContext) {
     canvas.style.width = `${width}px`;
     canvas.style.height = `${height}px`;
     ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-    createNodes();
+    createShapes();
+  }
+
+  function drawShape(s) {
+    const half = s.size / 2;
+    const c = s.chamfer;
+
+    ctx.save();
+    ctx.translate(s.x, s.y);
+    ctx.rotate(s.angle);
+    ctx.beginPath();
+    ctx.moveTo(-half, -half);
+    ctx.lineTo(half, -half);
+    ctx.lineTo(half, half - c);
+    ctx.lineTo(half - c, half);
+    ctx.lineTo(-half, half);
+    ctx.closePath();
+
+    const gradient = ctx.createLinearGradient(-half, -half, half, half);
+    gradient.addColorStop(0, "rgba(168, 85, 247, 0.16)");
+    gradient.addColorStop(1, "rgba(124, 58, 237, 0.02)");
+    ctx.fillStyle = gradient;
+    ctx.filter = "blur(36px)";
+    ctx.fill();
+    ctx.restore();
   }
 
   function step() {
     ctx.clearRect(0, 0, width, height);
 
-    // move + draw nodes
-    nodes.forEach((n) => {
-      n.x += n.vx;
-      n.y += n.vy;
+    shapes.forEach((s) => {
+      s.x += s.vx;
+      s.y += s.vy;
+      s.angle += s.vAngle;
 
-      if (n.x < 0 || n.x > width) n.vx *= -1;
-      if (n.y < 0 || n.y > height) n.vy *= -1;
-      n.x = Math.max(0, Math.min(width, n.x));
-      n.y = Math.max(0, Math.min(height, n.y));
+      const half = s.size / 2;
+      if (s.x < -half || s.x > width + half) s.vx *= -1;
+      if (s.y < -half || s.y > height + half) s.vy *= -1;
 
-      ctx.beginPath();
-      ctx.arc(n.x, n.y, n.r, 0, Math.PI * 2);
-      ctx.fillStyle = `rgba(${NODE_COLOR}, 0.7)`;
-      ctx.fill();
+      drawShape(s);
     });
-
-    // draw connecting lines between nearby nodes
-    for (let i = 0; i < nodes.length; i++) {
-      for (let j = i + 1; j < nodes.length; j++) {
-        const a = nodes[i];
-        const b = nodes[j];
-        const dx = a.x - b.x;
-        const dy = a.y - b.y;
-        const dist = Math.sqrt(dx * dx + dy * dy);
-
-        if (dist < LINK_DISTANCE) {
-          const opacity = (1 - dist / LINK_DISTANCE) * 0.5;
-          ctx.beginPath();
-          ctx.moveTo(a.x, a.y);
-          ctx.lineTo(b.x, b.y);
-          ctx.strokeStyle = `rgba(${LINE_COLOR}, ${opacity})`;
-          ctx.lineWidth = 1;
-          ctx.stroke();
-        }
-      }
-    }
 
     if (!prefersReducedMotion) {
       requestAnimationFrame(step);
@@ -325,3 +326,4 @@ if (canvas && canvas.getContext) {
     resizeTimer = setTimeout(resize, 200);
   });
 }
+
