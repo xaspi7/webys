@@ -467,6 +467,7 @@ h2 {
   border-radius: 8px;
   background: rgba(255, 255, 255, 0.82);
   box-shadow: 0 12px 32px rgba(85, 36, 170, 0.06);
+  clip-path: polygon(0 0, 100% 0, 100% calc(100% - 20px), calc(100% - 20px) 100%, 0 100%);
 }
 
 .pricing-price-block {
@@ -511,12 +512,20 @@ h2 {
 .pricing-features li:last-child { border-bottom: 0; }
 
 .pricing-feature-icon {
-  width: 30px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
   color: var(--purple);
-  font-size: 1.7rem;
-  font-weight: 400;
-  line-height: 1;
-  text-align: center;
+  flex-shrink: 0;
+}
+
+.pricing-feature-icon svg {
+  width: 25px;
+  height: 25px;
 }
 
 .pricing-examples { margin-top: 58px; }
@@ -541,6 +550,28 @@ h2 {
   background: rgba(255, 255, 255, 0.76);
   color: var(--ink-soft);
   font-weight: 600;
+  clip-path: polygon(0 0, 100% 0, 100% calc(100% - 16px), calc(100% - 16px) 100%, 0 100%);
+}
+
+.pricing-example-info {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.pricing-example-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  color: var(--ink);
+  flex-shrink: 0;
+}
+
+.pricing-example-icon svg {
+  width: 25px;
+  height: 25px;
 }
 
 .pricing-example strong { white-space: nowrap; }
@@ -555,6 +586,7 @@ h2 {
   border: 1px solid var(--border);
   border-radius: 6px;
   background: linear-gradient(90deg, rgba(124, 58, 237, 0.08), rgba(168, 85, 247, 0.04));
+  clip-path: polygon(0 0, 100% 0, 100% calc(100% - 16px), calc(100% - 16px) 100%, 0 100%);
 }
 
 .pricing-cta-icon {
@@ -719,6 +751,7 @@ h2 {
   border: 1px solid var(--border);
   box-shadow: var(--shadow);
   background: #fff;
+  clip-path: polygon(0 0, 100% 0, 100% calc(100% - 28px), calc(100% - 28px) 100%, 0 100%);
 }
 
 .browser-bar {
@@ -773,6 +806,7 @@ h2 {
   border-radius: var(--radius);
   box-shadow: 0 24px 50px rgba(124, 58, 237, 0.2);
   padding: 28px;
+  clip-path: polygon(0 0, 100% 0, 100% calc(100% - 20px), calc(100% - 20px) 100%, 0 100%);
 }
 
 .showcase-avatar {
@@ -804,12 +838,18 @@ h2 {
 }
 
 .tags li {
-  background: var(--purple-tint);
-  color: var(--purple-dark);
+  background: var(--purple);
+  color: #fff;
   font-size: 0.82rem;
   font-weight: 600;
   padding: 6px 14px;
   border-radius: 999px;
+}
+
+.tags li:not(:first-child) {
+  background: transparent;
+  color: var(--purple-dark);
+  border: 1.5px solid var(--border);
 }
 
 /* -------------------- Pricing -------------------- */
@@ -940,6 +980,7 @@ h2 {
   display: flex;
   flex-direction: column;
   gap: 30px;
+  clip-path: polygon(0 0, 100% 0, 100% calc(100% - 24px), calc(100% - 24px) 100%, 0 100%);
 }
 
 .field {
@@ -954,11 +995,15 @@ h2 {
   gap: 10px;
 }
 
-.field-index {
-  font-family: "Courier New", monospace;
-  font-size: 0.78rem;
-  letter-spacing: 0.1em;
-  color: var(--muted);
+.field-icon {
+  display: inline-flex;
+  align-items: center;
+  color: var(--purple);
+}
+
+.field-icon svg {
+  width: 18px;
+  height: 18px;
 }
 
 .field label {
@@ -987,7 +1032,7 @@ h2 {
   border-color: var(--purple);
 }
 
-.field-accent-teal .field-index { color: var(--teal); }
+.field-accent-teal .field-icon { color: var(--teal); }
 
 .field-accent-teal textarea:focus {
   border-color: var(--teal);
@@ -1363,11 +1408,38 @@ h2 {
   color: var(--ink);
 }
 
+.faq-item summary {
+  position: relative;
+  padding-right: 34px;
+  color: var(--ink);
+  cursor: pointer;
+  font-size: 1.1rem;
+  font-weight: 700;
+  list-style: none;
+}
+
+.faq-item summary::-webkit-details-marker { display: none; }
+
+.faq-item summary::after {
+  content: "+";
+  position: absolute;
+  top: -3px;
+  right: 0;
+  color: var(--purple);
+  font-size: 1.45rem;
+  font-weight: 400;
+  line-height: 1;
+}
+
+.faq-item[open] summary::after { content: "−"; }
+
 .faq-item p {
   margin: 0;
   color: var(--ink-soft);
   font-size: 0.96rem;
 }
+
+.faq-item summary + p { margin-top: 12px; }
 
 /* -------------------- Cookie consent -------------------- */
 
@@ -1744,9 +1816,15 @@ h2 {
   box-shadow: 0 12px 26px rgba(90, 34, 255, 0.12);
 }
 
-.showcase-card .btn,
-.pricing-button,
-.pricing-cta .btn { clip-path: polygon(0 0, calc(100% - 13px) 0, 100% 50%, calc(100% - 13px) 100%, 0 100%); }
+.btn-primary {
+  border-radius: 8px !important;
+  clip-path: polygon(0 0, 100% 0, 100% calc(100% - 14px), calc(100% - 14px) 100%, 0 100%) !important;
+}
+
+.btn-primary.btn-small {
+  border-radius: 6px !important;
+  clip-path: polygon(0 0, 100% 0, 100% calc(100% - 11px), calc(100% - 11px) 100%, 0 100%) !important;
+}
 
 .contact-form {
   background: #faf8ff;
@@ -1881,7 +1959,8 @@ h2 {
   font-size: 0.76rem;
 }
 
-.pricing-feature-icon { width: 23px; font-size: 1.35rem; }
+.pricing-feature-icon { width: 38px; height: 38px; border-radius: 9px; }
+.pricing-feature-icon svg { width: 21px; height: 21px; }
 
 .pricing-examples { margin-top: 30px; }
 
@@ -1928,6 +2007,105 @@ h2 {
   .pricing-price-block { padding: 24px; }
   .pricing-features { padding: 8px 24px; }
   .pricing-example { font-size: 0.76rem; }
+}
+
+/* Keep the pricing page focused on the reference composition. */
+.pricing-page-body #network-bg,
+.pricing-page-body .site-header,
+.pricing-page-body .section,
+.pricing-page-body .site-footer,
+.pricing-page-body .cookie-banner,
+.pricing-page-body .cookie-modal-overlay {
+  display: none;
+}
+
+.pricing-page-body .pricing-page {
+  min-height: 100vh;
+  padding: 54px 0 14px;
+  background:
+    radial-gradient(circle at 88% 8%, rgba(153, 91, 255, 0.2), transparent 25%),
+    #fff;
+}
+
+.pricing-page-body .pricing-page .container {
+  max-width: 768px;
+  padding-right: 22px;
+  padding-left: 25px;
+}
+
+.pricing-page-body .pricing-page h1 {
+  max-width: 325px;
+  margin-bottom: 40px;
+  font-size: 3.6rem;
+  line-height: 1.08;
+}
+
+.pricing-page-body .pricing-eyebrow { margin-bottom: 20px; }
+
+.pricing-page-body .pricing-offer {
+  grid-template-columns: 0.96fr 1.04fr;
+  min-height: 284px;
+}
+
+.pricing-page-body .pricing-price-block {
+  min-width: 0;
+  padding: 31px 40px;
+}
+.pricing-page-body .pricing-amount { font-size: 3.8rem; }
+.pricing-page-body .pricing-button {
+  min-height: 46px;
+  margin-top: 28px;
+  font-size: 1rem;
+}
+.pricing-page-body .pricing-features {
+  min-width: 0;
+  padding: 22px 40px;
+}
+.pricing-page-body .pricing-features li { min-height: 56px; font-size: 0.95rem; }
+.pricing-page-body .pricing-examples { margin-top: 39px; }
+.pricing-page-body .pricing-examples h2 { margin-bottom: 10px; font-size: 1.8rem; }
+.pricing-page-body .pricing-example { min-height: 62px; padding: 16px 24px; font-size: 0.95rem; }
+.pricing-page-body .pricing-cta { min-height: 84px; margin-top: 17px; padding: 16px 24px; }
+.pricing-page-body .pricing-cta strong { font-size: 0.95rem; }
+.pricing-page-body .pricing-cta p { font-size: 0.78rem; }
+
+@media (max-width: 560px) {
+  .pricing-page-body .pricing-page { padding-top: 32px; }
+  .pricing-page-body .pricing-page .container { padding-right: 20px; padding-left: 20px; }
+  .pricing-page-body .pricing-page h1 { font-size: 2.3rem; margin-bottom: 28px; }
+  .pricing-page-body .pricing-eyebrow { margin-bottom: 8px; }
+  .pricing-page-body .pricing-offer { grid-template-columns: 1fr; }
+  .pricing-page-body .pricing-price-block { padding: 24px; }
+  .pricing-page-body .pricing-features { padding: 8px 24px; }
+  .pricing-page-body .pricing-amount { font-size: 3rem; }
+  .pricing-page-body .pricing-example { min-height: 51px; font-size: 0.76rem; }
+  .pricing-page-body .pricing-cta { min-height: 66px; }
+}
+
+/* The pricing page keeps the shared navigation and its FAQ below the reference block. */
+.pricing-page-body .site-header,
+.pricing-page-body .pricing-page-body .site-header {
+  display: block;
+}
+
+.pricing-page-body .pricing-page-body .section,
+.pricing-page-body .section#faq {
+  display: block;
+}
+
+.pricing-page-body section[hidden] { display: none; }
+.pricing-page-body .site-footer { display: block; }
+
+.pricing-page-body .section#faq {
+  padding: 76px 0;
+  background: rgba(248, 246, 255, 0.9);
+}
+
+.pricing-page-body .section#faq .container { max-width: 768px; }
+
+@media (max-width: 560px) {
+  .pricing-page-body .section#faq { padding: 58px 0; }
+  .pricing-page-body .section#faq .container { padding-right: 20px; padding-left: 20px; }
 }
 
 /* Restore the original site styling everywhere except the reference-matched pricing page. */
